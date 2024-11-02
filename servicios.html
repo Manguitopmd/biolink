@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo Interactivo Mejorado</title>
+  <link rel="stylesheet" href="catalogo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Flip.min.js"></script>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f8f9fa;
+      margin: 0;
+      flex-direction: column;
+      font-family: 'Roboto', sans-serif;
+    }
+    #catalog {
+      position: relative;
+      width: 90vw;
+      height: 140vw;
+      max-width: 1080px;
+      max-height: 1920px;
+      perspective: 3000px;
+    }
+    .page {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transform-origin: left;
+      transition: transform 1.2s ease-in-out;
+      backface-visibility: hidden;
+      overflow: hidden;
+    }
+    .page img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .page:nth-child(even) {
+      z-index: 2;
+    }
+    .page:nth-child(odd) {
+      z-index: 1;
+    }
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    button {
+      padding: 14px 28px;
+      font-size: 18px;
+      margin: 0 15px;
+      cursor: pointer;
+      border: none;
+      border-radius: 50px;
+      background-color: #FF6B00;
+      color: white;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+      display: flex;
+      align-items: center;
+    }
+    button i {
+      margin-right: 8px;
+    }
+    button:hover {
+      background-color: #0056b3;
+      box-shadow: 0 8px 16px rgba(0, 86, 179, 0.5);
+    }
+    button:focus {
+      outline: none;
+    }
+    .indicator {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .indicator div {
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      background-color: #ccc;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+    .indicator div.active {
+      background-color: #007bff;
+    }
+    @media (max-width: 600px) {
+      #catalog {
+        width: 100vw;
+        height: 180vw;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="catalog">
+    <div class="page"><img src="1.jpg" alt="Página 1"></div>
+    <div class="page"><img src="2.jpg" alt="Página 2"></div>
+    <div class="page"><img src="3.jpg" alt="Página 3"></div>
+    <div class="page"><img src="4.jpg" alt="Página 4"></div>
+    <div class="page"><img src="5.jpg" alt="Página 5"></div>
+    <div class="page"><img src="6.jpg" alt="Página 6"></div>
+    <div class="page"><img src="7.jpg" alt="Página 7"></div>
+    <div class="page"><img src="8.jpg" alt="Página 8"></div>
+    <div class="page"><img src="9.jpg" alt="Página 9"></div>
+    <div class="page"><img src="10.jpg" alt="Página 10"></div>
+  </div>
+  <div class="buttons">
+    <button id="prevButton"><i class="fas fa-arrow-left"></i>Anterior</button>
+    <button id="nextButton">Siguiente<i class="fas fa-arrow-right"></i></button>
+  </div>
+  <div class="indicator" id="pageIndicator"></div>
+  <script>
+    const pages = document.querySelectorAll('.page');
+    const pageIndicator = document.getElementById('pageIndicator');
+    let currentPage = 0;
+
+    // Create page indicators
+    pages.forEach((_, index) => {
+      const indicatorDot = document.createElement('div');
+      if (index === currentPage) {
+        indicatorDot.classList.add('active');
+      }
+      pageIndicator.appendChild(indicatorDot);
+    });
+
+    function updatePageVisibility() {
+      pages.forEach((page, index) => {
+        if (index <= currentPage) {
+          page.style.zIndex = pages.length - index;
+        } else {
+          page.style.zIndex = 0;
+        }
+      });
+      updateIndicator();
+    }
+
+    function updateIndicator() {
+      const indicators = pageIndicator.querySelectorAll('div');
+      indicators.forEach((dot, index) => {
+        if (index === currentPage) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    function turnPage(direction) {
+      if (direction === 'next' && currentPage < pages.length - 1) {
+        gsap.to(pages[currentPage], { rotationY: -180, duration: 1.2, ease: "power3.inOut", onComplete: () => {
+          currentPage++;
+          updatePageVisibility();
+        }});
+      } else if (direction === 'prev' && currentPage > 0) {
+        currentPage--;
+        gsap.to(pages[currentPage], { rotationY: 0, duration: 1.2, ease: "power3.inOut", onComplete: updatePageVisibility });
+      }
+    }
+
+    document.getElementById('nextButton').addEventListener('click', () => {
+      turnPage('next');
+    });
+
+    document.getElementById('prevButton').addEventListener('click', () => {
+      turnPage('prev');
+    });
+
+    // Add swipe functionality for mobile
+    let startX = 0;
+    let isDragging = false;
+
+    document.getElementById('catalog').addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    });
+
+    document.getElementById('catalog').addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const currentX = e.touches[0].clientX;
+      const diffX = currentX - startX;
+
+      if (diffX > 50) {
+        turnPage('prev');
+        isDragging = false;
+      } else if (diffX < -50) {
+        turnPage('next');
+        isDragging = false;
+      }
+    });
+
+    document.getElementById('catalog').addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    updatePageVisibility();
+  </script>
+</body>
+</html>
