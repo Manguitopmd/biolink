@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manguito Publicidad - Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at top left, #111, #0d0d0d, #070000 90%); /* Degradado oscuro */
+            color: #ffffff;
+            overflow-x: hidden; /* Solo ocultar el desbordamiento horizontal */
+            position: relative;
+        }
+
+
+        h2 {
+            color: #ffcc00;
+            margin-bottom: 30px;
+        }
+        .section {
+            padding: 60px 0;
+            border-radius: 15px;        /* Bordes redondeados */
+            margin: 40px auto;
+            max-width: 1200px;
+            background-color: #090909; /* Fondo más claro que el fondo principal */
+            position: relative;
+            border: 1px solid #ffa100;
+            box-shadow: 0px 14px 15px rgba(255, 102, 0, 0.1); /* Sombra naranja oscuro */
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: auto;
+            font-size: 1.8rem;
+            color: #ffcc00;
+            padding: 8px 12px;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #ffcc00;
+        }
+        .icono-servicio {
+            font-size: 3rem;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+        .video-thumbnail {
+            position: relative;
+            cursor: pointer;
+        }
+        .video-thumbnail::before {
+            content: '\f04b';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* CSS para que el carrusel sea responsivo */
+        .carousel-inner .row {
+            display: flex;
+            flex-wrap: nowrap;
+            transition: transform 0.5s ease;
+        }
+        .carousel-inner .col-md-4 {
+            flex: 0 0 auto;
+        }
+        #youtube-subscribe p {
+        color: #b3b3b3;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .btn-subscribe {
+        display: inline-block;
+        background-color: #ff0000;
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 10px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-subscribe i {
+        margin-right: 8px;
+    }
+
+    .btn-subscribe:hover {
+        background-color: #cc0000;
+    }
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 10px 0;
+    }
+
+    .social-icon {
+        font-size: 2rem;
+        color: #ffffff;
+        transition: color 0.3s ease;
+    }
+
+    /* Colores específicos de cada red social */
+    .social-icon.tiktok:hover { color: #69C9D0; }
+    .social-icon.youtube:hover { color: #FF0000; }
+    .social-icon.instagram:hover { color: #C13584; }
+    .social-icon.facebook:hover { color: #1877F2; }
+    .social-icon.behance:hover { color: #1769FF; }
+    .fullscreen-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté sobre todo el contenido */
+}
+
+.fullscreen-video video {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close-video {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+     
+    </style>
+</head>
+<body>
+    <div class="particle-container" id="particle-container"></div>
+
+    <!-- Resto del contenido de la página va aquí -->
+
+    <!-- Sección de Bienvenida con Efecto Parallax -->
+    <div class="parallax section text-center" style="background-image: url('banner.jpg'); background-attachment: fixed; background-size: cover; background-position: center;">
+        <div class="container">
+            <h1 class="display-4 text-white">Bienvenido a Manguito Publicidad</h1>
+            <p class="lead text-white">Transformamos tu marca con creatividad e inteligencia.</p>
+        </div>
+    </div>
+
+    <!-- Sección de Servicios Destacados -->
+    <div class="section text-center">
+        <div class="container">
+            <h2>Servicios Destacados</h2>
+            <div id="serviciosCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="p-4">
+                                    <i class="fas fa-bullhorn icono-servicio"></i>
+                                    <h3>Publicidad Digital</h3>
+                                    <p>Impulsa tu marca en el mundo digital con estrategias efectivas y segmentadas. Llega a tu público ideal y destaca en cada plataforma.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-4">
+                                    <i class="fas fa-paint-brush icono-servicio"></i>
+                                    <h3>Diseño Gráfico</h3>
+                                    <p>Transformamos ideas en imágenes poderosas. Dale identidad visual a tu marca con diseños únicos y memorables</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-4">
+                                    <i class="fas fa-chart-line icono-servicio"></i>
+                                    <h3>Consultoría</h3>
+                                    <p>Optimiza tu estrategia con asesoría experta. Identificamos oportunidades y potenciamos el crecimiento de tu marca..</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-4">
+                                    <i class="fas fa-video icono-servicio"></i>
+                                    <h3>Producción Audiovisual</h3>
+                                    <p>Capturamos la esencia de tu marca en cada fotograma. Crea contenido visual impactante que conecta y cautiva a tu audiencia.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-4">
+                                    <i class="fas fa-bullseye icono-servicio"></i>
+                                    <h3>Branding</h3>
+                                    <p>Construimos la personalidad de tu marca para que destaque y conecte. Definimos identidad, voz y valores únicos que dejan huella.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-4">
+                                    <i class="fas fa-ad icono-servicio"></i>
+                                    <h3>Redes Sociales</h3>
+                                    <p>Maximiza tu alcance en redes con campañas creativas y segmentadas. Conecta con tu audiencia y potencia tu marca online.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" onclick="moveCarousel('prev', 'serviciosCarousel')">
+    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+    <span class="visually-hidden">Anterior</span>
+</button>
+<button class="carousel-control-next" type="button" onclick="moveCarousel('next', 'serviciosCarousel')">
+    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+    <span class="visually-hidden">Siguiente</span>
+</button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Galería de Flyers -->
+    <div class="section text-center">
+        <div class="container">
+            <h2>Galería de Flyers</h2>
+            <div id="flyersCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="flyers/1.jpg" class="d-block w-100" alt="Flyer 1">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="flyers/2.jpg" class="d-block w-100" alt="Flyer 2">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="flyers/3.jpg" class="d-block w-100" alt="Flyer 3">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="flyers/4.jpg" class="d-block w-100" alt="Flyer 4">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="flyers/5.jpg" class="d-block w-100" alt="Flyer 5">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="flyers/6.jpg" class="d-block w-100" alt="Flyer 6">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="flyers/7.jpg" class="d-block w-100" alt="Flyer 7">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="flyers/8.jpg" class="d-block w-100" alt="Flyer 8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" onclick="moveCarousel('prev', 'flyersCarousel')">
+    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+    <span class="visually-hidden">Anterior</span>
+</button>
+<button class="carousel-control-next" type="button" onclick="moveCarousel('next', 'flyersCarousel')">
+    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+    <span class="visually-hidden">Siguiente</span>
+</button>
+
+            </div>
+        </div>
+    </div>
+    <!-- Sección de Suscripción a YouTube -->
+<div class="section text-center" id="youtube-subscribe">
+    <div class="container">
+        <h2>Sigue Nuestro Canal en YouTube</h2>
+        <p>Explora contenido exclusivo, consejos de marketing y más. ¡No te pierdas nuestras actualizaciones!</p>
+        <a href="https://www.youtube.com/@manguitopublicidad" target="_blank" class="btn-subscribe">
+            <i class="fab fa-youtube"></i> Suscribirse
+        </a>
+    </div>
+</div>
+
+    <!-- Sección de Videos Verticales en MP4 (Local) -->
+    <!-- Sección de Videos Verticales en MP4 (Local) -->
+<div class="section text-center">
+    <div class="container">
+        <h2>Reels & Flyers Animados</h2>
+        <div id="videosLocalesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="video-thumbnail" onclick="playVideo('videos/video1.mp4')">
+                                <img src="portadas/p001.jpg" class="d-block w-100" alt="Video 1">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="video-thumbnail" onclick="playVideo('videos/video2.mp4')">
+                                <img src="portadas/p002.jpg" class="d-block w-100" alt="Video 2">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="video-thumbnail" onclick="playVideo('videos/video3.mp4')">
+                                <img src="portadas/p003.jpg" class="d-block w-100" alt="Video 3">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="video-thumbnail" onclick="playVideo('videos/video4.mp4')">
+                                <img src="portadas/p004.jpg" class="d-block w-100" alt="Video 4">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="video-thumbnail" onclick="playVideo('videos/video5.mp4')">
+                                <img src="portadas/p005.jpg" class="d-block w-100" alt="Video 5">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="video-thumbnail" onclick="playVideo('videos/video6.mp4')">
+                                <img src="portadas/p006.jpg" class="d-block w-100" alt="Video 6">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" onclick="moveCarousel('prev', 'videosLocalesCarousel')">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" onclick="moveCarousel('next', 'videosLocalesCarousel')">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Contenedor para el video en pantalla completa -->
+<div id="fullscreenVideo" class="fullscreen-video" style="display: none;">
+    <video id="videoPlayer">
+        <source id="videoSource" src="" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <button class="close-video" onclick="closeVideo()">Cerrar</button>
+</div>
+
+
+
+    <!-- Sección de Videos Promocionales de YouTube -->
+    <div class="section text-center">
+        <div class="container">
+            <h2>Spot's</h2>
+            <div id="videosHorizontalesCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <iframe class="d-block w-100" src="https://www.youtube.com/embed/hnpeZFmLwD0?si=AN7pq9NUlaIMceJN" allowfullscreen></iframe>
+                            </div>
+                            <div class="col-md-4">
+                                <iframe class="d-block w-100" src="https://www.youtube.com/embed/pA1_tBCbzUQ?si=1xwXdwA4BFPSaM6Q" allowfullscreen></iframe>
+                            </div>
+                            <div class="col-md-4">
+                                <iframe class="d-block w-100" src="https://www.youtube.com/embed/pG62fVDCUlw?si=MHJHE0aGBJzh6iIY" allowfullscreen></iframe>
+                            </div>
+                            <div class="col-md-4">
+                                <iframe class="d-block w-100" src="https://www.youtube.com/embed/0qr4ogilrBE?si=VYiw4UQ5SzIeTWEZ" allowfullscreen></iframe>
+                            </div>
+                            <div class="col-md-4">
+                                <iframe class="d-block w-100" src="https://www.youtube.com/embed/KYLXfw4o6wA?si=G5bUcfiTLMZm30Bp" allowfullscreen></iframe>
+                            </div>
+                            <div class="col-md-4">
+                                <iframe class="d-block w-100" src="https://www.youtube.com/embed/sNc1KdLWlRA?si=4fFV5oCtIzL1tFzJ" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" onclick="moveCarousel('prev', 'videosHorizontalesCarousel')">
+    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+    <span class="visually-hidden">Anterior</span>
+</button>
+<button class="carousel-control-next" type="button" onclick="moveCarousel('next', 'videosHorizontalesCarousel')">
+    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+    <span class="visually-hidden">Siguiente</span>
+</button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Función para controlar el desplazamiento de cada carrusel
+        function moveCarousel(direction, carouselId) {
+            const row = document.querySelector(`#${carouselId} .carousel-inner .row`);
+            const itemWidth = row.querySelector('.col-md-4').offsetWidth;
+            const itemsInRow = row.querySelectorAll('.col-md-4').length;
+            const visibleItems = Math.min(window.innerWidth < 768 ? 1 : window.innerWidth < 992 ? 2 : 3, itemsInRow);
+            let currentTranslateX = parseFloat(row.getAttribute('data-translate') || 0);
+
+            if (direction === 'next' && currentTranslateX > -(itemWidth * (itemsInRow - visibleItems))) {
+                currentTranslateX -= itemWidth;
+            } else if (direction === 'prev' && currentTranslateX < 0) {
+                currentTranslateX += itemWidth;
+            }
+
+            row.style.transform = `translateX(${currentTranslateX}px)`;
+            row.setAttribute('data-translate', currentTranslateX);
+        }
+
+        // Función para reproducir videos en pantalla completa
+        function playVideo(videoSrc) {
+        const videoPlayer = document.getElementById('videoPlayer');
+        const videoSource = document.getElementById('videoSource');
+        const fullscreenContainer = document.getElementById('fullscreenVideo');
+
+        videoSource.src = videoSrc; // Cambia la fuente del video
+        videoPlayer.load(); // Carga el nuevo video
+        fullscreenContainer.style.display = 'flex'; // Muestra el contenedor del video
+        videoPlayer.play(); // Reproduce el video
+
+        // Cierra el video automáticamente al finalizar
+        videoPlayer.onended = function() {
+            closeVideo();
+        };
+    }
+
+    function closeVideo() {
+        const fullscreenContainer = document.getElementById('fullscreenVideo');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        videoPlayer.pause(); // Pausa el video
+        fullscreenContainer.style.display = 'none'; // Oculta el contenedor del video
+        videoPlayer.src = ''; // Limpia la fuente del video
+    }
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault(); // Evita el menú contextual
+    });
+
+    // Protección contra selección de texto
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault(); // Evita la selección de texto
+    });
+
+    // Protección para imágenes
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.oncontextmenu = function() {
+            return false; // Evita el menú contextual en imágenes
+        };
+    });
+    </script>
+
+    <!-- Footer -->
+    <footer class="text-center">
+    <p>Síguenos en nuestras redes sociales:</p>
+    <div class="social-icons">
+        <a href="https://www.tiktok.com/@tu_usuario" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/channel/tu_canal" target="_blank" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/tu_usuario" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/tu_usuario" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.behance.net/tu_usuario" target="_blank" class="social-icon behance"><i class="fab fa-behance"></i></a>
+    </div>
+    <p>&copy; 2024 Manguito Publicidad. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
