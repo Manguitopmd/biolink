@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes de Redes Sociales - Manguito Publicidad</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-size: 100%;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.4;
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        img, video, iframe {
+            max-width: 100%;
+            height: auto;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button, input, textarea, select {
+            font-family: inherit;
+            border: none;
+            outline: none;
+            background: none;
+            padding: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote::before, blockquote::after,
+        q::before, q::after {
+            content: '';
+        }
+
+        /* Estilos personalizados */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .content-wrapper {
+            background: #1B1B1B;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #FFD600;
+            margin-bottom: 20px;
+        }
+
+        .plans-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding-bottom: 20px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .plans-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .plan-card {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            background: #2C2C2C;
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .plan-card h3 {
+            font-size: 20px;
+            color: #FFD600;
+            margin-bottom: 15px;
+        }
+
+        .plan-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .plan-card ul li {
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-card ul li i {
+            margin-right: 10px;
+            color: #FFD600;
+        }
+
+        .btn-select-plan {
+            display: inline-block;
+            background-color: #FFD600;
+            color: #1B1B1B;
+            border: none;
+            border-radius: 12px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-select-plan:hover {
+            background-color: #ffbb00;
+            transform: translateY(-3px);
+        }
+
+        .scroll-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .scroll-indicator .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #555;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .scroll-indicator .dot.active {
+            background-color: #FFD600;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #888;
+            text-align: center;
+        }
+
+        .price-selector {
+            margin-bottom: 20px;
+        }
+
+        .price-selector select {
+            padding: 5px 10px;
+            border-radius: 8px;
+            border: 1px solid #FFD600;
+            background-color: #1B1B1B;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #1B1B1B;
+            padding: 20px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .modal-content h3 {
+            font-size: 20px;
+            color: #FFD600;
+            margin-bottom: 20px;
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #FFD600;
+            background-color: #1B1B1B;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .modal-content button {
+            background-color: #FFD600;
+            color: #1B1B1B;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .modal-content button:hover {
+            background-color: #ffbb00;
+        }
+
+        /* Fondo animado */
+        .emoji-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .emoji {
+            position: absolute;
+            font-size: 30px;
+            animation: float 10s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0.8);
+                opacity: 0;
+            }
+            30% {
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fondo animado -->
+    <div class="emoji-background"></div>
+
+    <div class="main-container">
+        <div class="content-wrapper">
+            <img src="logo.jpg" alt="Manguito Publicidad" style="width: 100px; height: 100px; border-radius: 50%;">
+            <h2>PAQUETES DISPONIBLES</h2>
+            <div class="plans-container" id="plansContainer">
+                <!-- Plan 1: Paquete Base -->
+                <div class="plan-card">
+                    <div class="price-selector">
+                        <select class="price-toggle" data-monthly="250">
+                            <option value="monthly">Mes</option>
+                            <option value="trimestral">3 Meses</option>
+                        </select>
+                    </div>
+                    <h3>Paquete Base - <span class="price">S/ 250</span></h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i>Gestión de 01 plataforma (FB o IG)</li>
+                        <li><i class="fas fa-check"></i>01 Diseño de Portada + 01 Diseño de Perfil</li>
+                        <li><i class="fas fa-check"></i>08 Publicaciones (Flyer + Copy optimizado)</li>
+                        <li><i class="fas fa-check"></i>02 Stories estratégicas</li>
+                        <li><i class="fas fa-check"></i>Creación de Calendario de Contenidos</li>
+                    </ul>
+                    <a href="#" class="btn-select-plan" data-plan="Paquete Base">Elegir este plan</a>
+                </div>
+
+                <!-- Plan 2: Paquete Avanzado -->
+                <div class="plan-card">
+                    <div class="price-selector">
+                        <select class="price-toggle" data-monthly="350">
+                            <option value="monthly">Mes</option>
+                            <option value="trimestral">3 Meses</option>
+                        </select>
+                    </div>
+                    <h3>Paquete Avanzado - <span class="price">S/ 350</span></h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i>Gestión de 02 plataformas (FB e IG)</li>
+                        <li><i class="fas fa-check"></i>01 Diseño de Portada + 01 Diseño de Perfil</li>
+                        <li><i class="fas fa-check"></i>12 Publicaciones (Flyer + Copy optimizado)</li>
+                        <li><i class="fas fa-check"></i>04 Stories estratégicas</li>
+                        <li><i class="fas fa-check"></i>Creación de Calendario de Contenidos</li>
+                        <li><i class="fas fa-gift"></i><strong>BONO:</strong> ¡Contrata 3 meses y obtén una sesión de fotos gratuita para tu negocio!</li>
+                    </ul>
+                    <a href="#" class="btn-select-plan" data-plan="Paquete Avanzado">Elegir este plan</a>
+                </div>
+
+                <!-- Plan 3: Paquete TikTok -->
+                <div class="plan-card">
+                    <div class="price-selector">
+                        <select class="price-toggle" data-monthly="500">
+                            <option value="monthly">Mes</option>
+                            <option value="trimestral">3 Meses</option>
+                        </select>
+                    </div>
+                    <h3>Paquete TikTok - <span class="price">S/ 500</span></h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i>Gestión de 01 plataforma (TikTok)</li>
+                        <li><i class="fas fa-check"></i>01 Diseño de Portada + 01 Diseño de Perfil</li>
+                        <li><i class="fas fa-check"></i>10 Publicaciones (Video + Copy optimizado)</li>
+                        <li><i class="fas fa-check"></i>04 Stories estratégicas</li>
+                        <li><i class="fas fa-check"></i>Creación de Calendario (BONUS)</li>
+                    </ul>
+                    <a href="#" class="btn-select-plan" data-plan="Paquete TikTok">Elegir este plan</a>
+                </div>
+
+                <!-- Plan 4: Paquete Élite -->
+                <div class="plan-card">
+                    <div class="price-selector">
+                        <select class="price-toggle" data-monthly="800">
+                            <option value="monthly">Mes</option>
+                            <option value="trimestral">3 Meses</option>
+                        </select>
+                    </div>
+                    <h3>Paquete Élite - <span class="price">S/ 800</span></h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i>Gestión de 02 plataformas (FB e IG o IG y TikTok)</li>
+                        <li><i class="fas fa-check"></i>01 Diseño de Portada + 01 Diseño de Perfil</li>
+                        <li><i class="fas fa-check"></i>10 Publicaciones (Flyer estático + Copy optimizado)</li>
+                        <li><i class="fas fa-check"></i>04 Reels/Microvideos con edición profesional</li>
+                        <li><i class="fas fa-check"></i>06 Stories estratégicas para aumentar engagement</li>
+                        <li><i class="fas fa-check"></i>Creación de Calendario de Contenidos</li>
+                        <li><i class="fas fa-check"></i>Optimización de perfil y estrategia de hashtags</li>
+                        <li><i class="fas fa-check"></i>Monitoreo de engagement y recomendaciones mensuales</li>
+                        <li><i class="fas fa-gift"></i><strong>BONO:</strong> ¡Contrata 3 meses y obtén una sesión de fotos gratuita para tu negocio!</li>
+                    </ul>
+                    <a href="#" class="btn-select-plan" data-plan="Paquete Élite">Elegir este plan</a>
+                </div>
+            </div>
+
+            <!-- Indicadores de desplazamiento -->
+            <div class="scroll-indicator" id="scrollIndicator">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <div class="footer">© 2024 Manguito Publicidad</div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <h3>¡Contáctanos!</h3>
+            <input type="text" id="clientName" placeholder="Tu nombre" required>
+            <input type="text" id="businessName" placeholder="Nombre de tu negocio" required>
+            <button id="sendMessage">Enviar</button>
+        </div>
+    </div>
+        <script>
+        // Variables globales para almacenar la información del plan seleccionado
+        let selectedPlan = null;
+        let selectedDuration = null;
+        let selectedPrice = null;
+
+        // Lógica para cambiar el precio al usar el select
+        const priceSelectors = document.querySelectorAll('.price-toggle');
+        priceSelectors.forEach(select => {
+            select.addEventListener('change', () => {
+                const planCard = select.closest('.plan-card');
+                const priceElement = planCard.querySelector('.price');
+                const monthlyPrice = parseFloat(select.getAttribute('data-monthly'));
+                const discount = 0.20; // 20% de descuento
+                const trimestralPrice = (monthlyPrice * 3) * (1 - discount); // Precio total con descuento
+
+                if (select.value === "trimestral") {
+                    priceElement.textContent = `S/ ${trimestralPrice.toFixed(2)}`;
+                } else {
+                    priceElement.textContent = `S/ ${monthlyPrice}`;
+                }
+            });
+        });
+
+        // Lógica para abrir el modal al hacer clic en "Elegir este plan"
+        const planButtons = document.querySelectorAll('.btn-select-plan');
+        planButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); // Evita que el enlace se abra directamente
+                const planCard = button.closest('.plan-card');
+                selectedPlan = button.getAttribute('data-plan');
+                const priceSelector = planCard.querySelector('.price-toggle');
+                selectedDuration = priceSelector.value === "monthly" ? "1 mes" : "3 meses";
+                selectedPrice = planCard.querySelector('.price').textContent;
+
+                // Mostrar el modal
+                document.getElementById('contactModal').style.display = 'flex';
+            });
+        });
+
+        // Lógica para enviar el mensaje de WhatsApp
+        document.getElementById('sendMessage').addEventListener('click', () => {
+            const clientName = document.getElementById('clientName').value;
+            const businessName = document.getElementById('businessName').value;
+
+            if (!clientName || !businessName) {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
+
+            // Crear el mensaje para WhatsApp
+            const message = `¡Hola! Soy *${clientName}* y tengo mi negocio de *${businessName}*.\n\n` +
+                            `Estoy interesado en el *${selectedPlan}* de Manguito Publicidad.\n\n` +
+                            `- Duración: ${selectedDuration}\n` +
+                            `- Precio: ${selectedPrice}\n\n` +
+                            `Por favor, contáctame para continuar con el proceso.`;
+
+            // Codificar el mensaje para la URL
+            const encodedMessage = encodeURIComponent(message);
+
+            // Abrir WhatsApp con el mensaje
+            window.open(`https://wa.link/phat12?text=${encodedMessage}`, '_blank');
+
+            // Cerrar el modal
+            document.getElementById('contactModal').style.display = 'none';
+        });
+
+        // Lógica para el desplazamiento entre planes
+        const plansContainer = document.getElementById('plansContainer');
+        const dots = document.querySelectorAll('.scroll-indicator .dot');
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                const planWidth = plansContainer.querySelector('.plan-card').offsetWidth + 20;
+                plansContainer.scrollTo({
+                    left: index * planWidth,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Actualizar los indicadores de desplazamiento
+        plansContainer.addEventListener('scroll', () => {
+            const scrollPosition = plansContainer.scrollLeft;
+            const planWidth = plansContainer.querySelector('.plan-card').offsetWidth + 20;
+            const activeIndex = Math.round(scrollPosition / planWidth);
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeIndex);
+            });
+        });
+
+        // Lógica para el fondo animado
+        const emojis = ["❤️", "👍", "😂", "😍", "🎉", "🔥", "✨", "😊"];
+        const emojiBackground = document.querySelector('.emoji-background');
+
+        function createEmoji() {
+            const emojiElement = document.createElement('div');
+            emojiElement.classList.add('emoji');
+            emojiElement.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emojiElement.style.left = Math.random() * 100 + 'vw';
+            emojiElement.style.animationDuration = 8 + Math.random() * 4 + 's';
+
+            emojiBackground.appendChild(emojiElement);
+
+            setTimeout(() => {
+                emojiBackground.removeChild(emojiElement);
+            }, 12000);
+        }
+
+        setInterval(createEmoji, 1000);
+    </script>
+</body>
+</html>
