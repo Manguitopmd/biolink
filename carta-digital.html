@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manguito Publicidad - Portales digitales para restaurantes. Atrae más clientes con una carta digital profesional.">
+    <meta name="keywords" content="carta digital, restaurantes, menú digital, portal web, delivery">
+    <title>Manguito Publicidad - Cartas Digitales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #facc15;
+            --secondary: #f97316;
+            --dark-bg: #1f2937;
+            --darker-bg: #111827;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg));
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .header {
+            background: rgba(31, 41, 55, 0.95);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .intro-section {
+            background: rgba(31, 41, 55, 0.9);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--primary);
+        }
+
+        .accordion-item {
+            background: rgba(31, 41, 55, 0.9);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .accordion-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, rgba(31, 41, 55, 0.9), rgba(55, 65, 81, 0.9));
+        }
+
+        .accordion-header:hover {
+            background: linear-gradient(to right, rgba(55, 65, 81, 0.9), rgba(75, 85, 99, 0.9));
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 600px;
+            padding: 1.5rem;
+        }
+
+        .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-icon.active {
+            transform: rotate(180deg);
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: #1f2937;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-demo {
+            background: #3b82f6;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-demo:hover {
+            transform: translateY(-3px);
+            background: #2563eb;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--dark-bg);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            background: rgba(55, 65, 81, 0.9);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            color: white;
+        }
+
+        .qr-image {
+            max-width: 200px;
+            border-radius: 8px;
+            border: 1px solid var(--primary);
+        }
+
+        .floating-emoji {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: float 8s ease infinite;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 0; }
+            20% { opacity: 0.7; }
+            80% { opacity: 0.7; }
+            100% { transform: translateY(-20vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div class="container">
+        <!-- Header -->
+        <div class="header text-center">
+            <img src="logo.jpg" alt="Manguito Publicidad" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-[var(--primary)]/50">
+            <h1 class="text-3xl font-bold text-[var(--primary)]">Portales Digitales para Restaurantes</h1>
+            <p class="text-lg mt-2 opacity-90">Transforma tu negocio con una carta digital profesional</p>
+        </div>
+
+        <!-- Introducción -->
+        <section class="intro-section">
+            <h2 class="text-2xl font-bold mb-4 text-[var(--primary)]">🍽️📲 Atrae más clientes hoy</h2>
+            <p class="text-lg">Moderniza tu restaurante con un portal web adaptable, fácil de usar y diseñado para aumentar tus ventas. Descubre nuestros planes personalizados.</p>
+        </section>
+
+        <!-- Planes -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold mb-6 text-center text-[var(--primary)]">Elige tu Plan</h2>
+
+            <!-- Plan Básico -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3 class="text-xl font-semibold text-[var(--primary)]">🍽️ Plan Básico – S/ 100</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="mb-4">Portal web profesional y responsive.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info clave</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta con platos y precios</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Interfaz rápida</li>
+                    </ul>
+                    <div class="flex justify-center gap-4 mt-4">
+                        <a href="https://manguitopmd.github.io/carta_plan_basico/" target="_blank" class="btn-demo">Ver Demo</a>
+                        <button class="btn-primary select-plan" data-plan="Plan Básico – S/ 100">Elegir Plan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan Menú del Día -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3 class="text-xl font-semibold text-[var(--primary)]">🍛 Plan Menú del Día – S/ 120</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="mb-4">Web optimizada con menú diario.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta completa</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú del día actualizable</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
+                    </ul>
+                    <div class="flex justify-center gap-4 mt-4">
+                        <a href="https://manguitopmd.github.io/carta_plan_menu/" target="_blank" class="btn-demo">Ver Demo</a>
+                        <button class="btn-primary select-plan" data-plan="Plan Menú del Día – S/ 120">Elegir Plan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan Promos -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3 class="text-xl font-semibold text-[var(--primary)]">🎉 Plan Promos – S/ 150</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="mb-4">Diseño con foco en ofertas.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta completa</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Promociones destacadas</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
+                    </ul>
+                    <div class="flex justify-center gap-4 mt-4">
+                        <a href="https://manguitopmd.github.io/carta_plan_promos/" target="_blank" class="btn-demo">Ver Demo</a>
+                        <button class="btn-primary select-plan" data-plan="Plan Promos – S/ 150">Elegir Plan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan Completo -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3 class="text-xl font-semibold text-[var(--primary)]">🍴 Plan Completo – S/ 200</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="mb-4">Portal moderno y completo.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio destacado</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta completa</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú del día</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Promociones</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
+                    </ul>
+                    <div class="flex justify-center gap-4 mt-4">
+                        <a href="https://manguitopmd.github.io/carta_plan_completo/" target="_blank" class="btn-demo">Ver Demo</a>
+                        <button class="btn-primary select-plan" data-plan="Plan Completo – S/ 200">Elegir Plan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan Pro -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3 class="text-xl font-semibold text-[var(--primary)]">🛒 Plan Pro – S/ 250 <span class="text-sm font-normal">(Ideal para Delivery)</span></h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="mb-4">Portal optimizado para pedidos.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta con selección</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú del día</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Promociones</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carrito integrado</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Pedido por WhatsApp</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
+                    </ul>
+                    <div class="flex justify-center gap-4 mt-4">
+                        <a href="https://manguitopmd.github.io/carta_plan_pro/" target="_blank" class="btn-demo">Ver Demo</a>
+                        <button class="btn-primary select-plan" data-plan="Plan Pro – S/ 250">Elegir Plan</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de Pago -->
+        <div class="modal" id="payment-modal">
+            <div class="modal-content">
+                <h2 class="text-2xl font-bold text-[var(--primary)] mb-4">Adquirir tu Portal</h2>
+                <p class="mb-4">Completa los datos y sigue las instrucciones de pago.</p>
+                <input type="text" id="restaurantName" placeholder="Nombre del restaurante" class="form-input">
+                <input type="tel" id="phoneNumber" placeholder="Número de WhatsApp" class="form-input">
+                <select id="plan-select" class="form-select">
+                    <option value="">Selecciona un plan</option>
+                    <option value="Plan Básico – S/ 100">Plan Básico – S/ 100</option>
+                    <option value="Plan Menú del Día – S/ 120">Plan Menú del Día – S/ 120</option>
+                    <option value="Plan Promos – S/ 150">Plan Promos – S/ 150</option>
+                    <option value="Plan Completo – S/ 200">Plan Completo – S/ 200</option>
+                    <option value="Plan Pro – S/ 250">Plan Pro – S/ 250</option>
+                </select>
+                <div class="text-center">
+                    <img src="qr-pago.jpg" alt="QR de Pago" class="qr-image mx-auto mb-4">
+                    <p class="mb-4 text-sm">Realiza el pago escaneando el QR y envíanos el comprobante.</p>
+                    <button id="send-whatsapp" class="btn-primary w-full">Enviar Comprobante</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-400 text-sm mt-8">
+            © 2025 Manguito Publicidad - Todos los derechos reservados
+        </footer>
+    </div>
+
+    <script>
+        // Variables globales
+        let selectedPlan = null;
+
+        // Funcionalidad del acordeón
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.toggle-icon');
+                const isActive = content.classList.contains('active');
+
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('.toggle-icon').classList.remove('active');
+                });
+
+                if (!isActive) {
+                    content.classList.add('active');
+                    icon.classList.add('active');
+                }
+            });
+        });
+
+        // Abrir modal al seleccionar plan
+        document.querySelectorAll('.select-plan').forEach(button => {
+            button.addEventListener('click', () => {
+                selectedPlan = button.getAttribute('data-plan');
+                const modal = document.getElementById('payment-modal');
+                const select = document.getElementById('plan-select');
+                select.value = selectedPlan;
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Enviar por WhatsApp
+        document.getElementById('send-whatsapp').addEventListener('click', () => {
+            const restaurantName = document.getElementById('restaurantName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const planSelect = document.getElementById('plan-select').value;
+
+            if (!restaurantName || !phoneNumber || !planSelect) {
+                alert('Por favor, completa todos los campos.');
+                return;
+            }
+
+            const message = `¡Hola Manguito Publicidad! 👋\n\n` +
+                           `*Solicitud de Portal Digital:*\n` +
+                           `- Restaurante: ${restaurantName}\n` +
+                           `- Teléfono: ${phoneNumber}\n` +
+                           `- Plan: ${planSelect}\n\n` +
+                           `Ya realicé el pago. Adjunto el comprobante. ¡Gracias!`;
+
+            window.open(`https://wa.link/phat12?text=${encodeURIComponent(message)}`, '_blank');
+            document.getElementById('payment-modal').style.display = 'none';
+        });
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('payment-modal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                e.currentTarget.style.display = 'none';
+            }
+        });
+
+        // Emojis flotantes
+        const emojis = ["🍽️", "🍔", "🍕", "🍣", "🥤", "🍦", "🍴"];
+        function createEmoji() {
+            const emoji = document.createElement('div');
+            emoji.className = 'floating-emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = `${Math.random() * 100}vw`;
+            emoji.style.animationDuration = `${6 + Math.random() * 4}s`;
+            document.body.appendChild(emoji);
+            setTimeout(() => emoji.remove(), 10000);
+        }
+        setInterval(createEmoji, 1500);
+        createEmoji();
+    </script>
+</body>
+</html>

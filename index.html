@@ -3,238 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manguito Publicidad - Soluciones creativas para tu marca: diseño, redes sociales, videos y más.">
+    <meta name="keywords" content="publicidad, diseño gráfico, redes sociales, branding, flyers">
     <title>Manguito Publicidad</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* CSS Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    font-size: 100%;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.4;
-}
-
-body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-img, video, iframe {
-    max-width: 100%;
-    height: auto;
-}
-
-ol, ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button, input, textarea, select {
-    font-family: inherit;
-    border: none;
-    outline: none;
-    background: none;
-    padding: 0;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-blockquote, q {
-    quotes: none;
-}
-
-blockquote::before, blockquote::after,
-q::before, q::after {
-    content: '';
-}
-
-        body {
-            background-color: #222;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .main-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        .content-wrapper {
-            background: #1B1B1B;
-            width: 100%;
-            max-width: 400px;
-            box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-            text-align: center;
-            padding: 30px;
-            color: #333;
-        }
-
-        .content-wrapper img {
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-buttons {
-            margin-top: 20px;
-        }
-
-        .social-buttons a {
-            font-size: 20px;
-            color: #B4B4B4;
-            margin: 0 10px;
-            transition: transform 0.3s, color 0.3s;
-        }
-
-        .social-buttons a:hover {
-            color: #ff8800;
-            transform: scale(1.2);
-        }
-        .yt:hover{
-            color:red;
-        }
-
-        .tt:hover{
-            color:white;
-        }
-        .fb:hover{
-            color:#3698D6;
-        }
-        .ig:hover{
-            color:#FF0063;
-        }
-
-        .btn-custom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            background-color: #1B1B1B;
-            color: #fff;
-            border: 1px solid #FFCF00;
-            border-radius: 12px;
-            padding: 10px 20px;
-            margin-bottom: 15px;
-            text-align: left;
-            text-decoration: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .btn-custom:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            text-decoration: none;
-            color:#FFCF00;
-        }
-
-        .btn-custom i {
-            font-size: 18px;
-            margin-right: 15px;
-        }
-
-        .arrow-icon {
-            font-size: 18px;
-            color: #ff8800;
-        }
-
-        .footer {
-            margin-top: 0px;
-            font-size: 13px;
-            color: #888;
-            text-align: center;
-        }
-
         .typing-effect {
-            font-size: 16px;
-            color: #fff;
-            margin-top: 10px;
-            min-height: 40px;
+            min-height: 2rem;
         }
-
         .highlight {
-            font-weight: bold;
-            color: #FFD600;
+            color: #facc15;
+            font-weight: 600;
         }
-
-        .emoji-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
+        .gradient-bg {
+            background: linear-gradient(135deg, #1f2937, #111827);
+            animation: gradientShift 15s ease infinite;
         }
-
-        .emoji {
-            position: absolute;
-            font-size: 30px;
-            animation: float 10s linear infinite;
-            opacity: 0.8;
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) scale(0.8);
-                opacity: 0;
-            }
-            30% {
-                opacity: 1;
-            }
-            70% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1.2);
-                opacity: 0;
-            }
+        .btn-gradient {
+            background: linear-gradient(to right, #facc15, #f97316);
+        }
+        .content-wrapper {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const phrases = [
-                "Diseñamos flyers *cautivadores*.",
-                "Flyers *cautivadores* que impactan.",
-                "Contenido que *convierte* ventas.",
-                "Redes sociales que generan *engagement*.",
-                "Gestión de *redes* que elevan tu marca.",
-                "Spots publicitarios *memorables*.",
-                "Reels que *destacan* tu mensaje.",
-                "Fotografía que *ilumina* tu marca.",
-                "Videos que *narran* tu historia.",
-                "Colaboramos en tu *identidad* de marca.",
-                "Gráficos que reflejan tu *esencia*.",
-                "Campañas que *fidelizan* clientes.",
-                "Contenido que se vuelve *viral*.",
-                "Anuncios que *resultan* efectivos.",
-                "Branding que *resuena* con la audiencia.",
-                "Infografías que *cautivan* e informan.",
-                "Landing pages que *maximizan* conversiones.",
-                "Banners que *capturan* la atención.",
-                "Sesiones de fotos *creativas*."
-            ];
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center gradient-bg text-white font-['Poppins',sans-serif]">
+    <div class="text-center mb-6">
+        <img src="logo.jpg" alt="Manguito Publicidad Logo" class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-yellow-400/50">
+        <h2 class="text-2xl font-bold mb-2 text-yellow-400">Manguito Publicidad</h2>
+        <div class="typing-effect text-gray-200 text-base"></div>
+    </div>
+    <div class="content-wrapper bg-gray-800/90 max-w-sm w-full mx-4 p-6 rounded-3xl shadow-xl backdrop-blur-sm">
+        <a href="https://wa.link/phat12" target="_blank" class="flex justify-between items-center w-full btn-gradient text-gray-900 rounded-lg p-3 mb-3 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+            <div><i class="fab fa-whatsapp mr-2 text-lg"></i> Impulsa tu marca</div>
+            <i class="fas fa-arrow-right text-gray-900"></i>
+        </a>
+        <a href="https://www.behance.net/manguitpublicidad" target="_blank" class="flex justify-between items-center w-full bg-gray-700 text-white border border-yellow-400 rounded-lg p-3 mb-3 hover:-translate-y-1 hover:shadow-lg hover:text-yellow-400 transition-all duration-300">
+            <div><i class="fas fa-folder-open mr-2 text-lg"></i> Proyectos Realizados</div>
+            <i class="fas fa-arrow-right text-yellow-400"></i>
+        </a>
+        <a href="landing.html" target="_blank" class="flex justify-between items-center w-full bg-gray-700 text-white border border-yellow-400 rounded-lg p-3 mb-3 hover:-translate-y-1 hover:shadow-lg hover:text-yellow-400 transition-all duration-300">
+            <div><i class="fa-solid fa-pen-nib mr-2 text-lg"></i> Quienes somos</div>
+            <i class="fas fa-arrow-right text-yellow-400"></i>
+        </a>
+        <a href="planes.html" target="_blank" class="flex justify-between items-center w-full bg-gray-700 text-white border border-yellow-400 rounded-lg p-3 mb-3 hover:-translate-y-1 hover:shadow-lg hover:text-yellow-400 transition-all duration-300">
+            <div><i class="fas fa-briefcase mr-2 text-lg"></i> Planes RRSS</div>
+            <i class="fas fa-arrow-right text-yellow-400"></i>
+        </a>
+        <!-- Nuevo botón de Carta Digital -->
+        <a href="carta-digital.html" target="_blank" class="flex justify-between items-center w-full bg-gray-700 text-white border border-yellow-400 rounded-lg p-3 mb-3 hover:-translate-y-1 hover:shadow-lg hover:text-yellow-400 transition-all duration-300">
+            <div><i class="fas fa-envelope mr-2 text-lg"></i> Carta Digital</div>
+            <i class="fas fa-arrow-right text-yellow-400"></i>
+        </a>
+        <div class="flex justify-center gap-6 mt-6">
+            <a href="https://web.facebook.com/ManguitoPublicidad" target="_blank" aria-label="Facebook" class="text-gray-300 text-xl hover:rotate-12 hover:text-[#3b5998] transition-all duration-300">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/manguitopublicidad" target="_blank" aria-label="Instagram" class="text-gray-300 text-xl hover:rotate-12 hover:text-[#e1306c] transition-all duration-300">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@manguitopublicidad" target="_blank" aria-label="TikTok" class="text-gray-300 text-xl hover:rotate-12 hover:text-white transition-all duration-300">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com/@manguitopublicidad" target="_blank" aria-label="YouTube" class="text-gray-300 text-xl hover:rotate-12 hover:text-[#ff0000] transition-all duration-300">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </div>
+    <div class="text-gray-400 text-sm mt-6">© 2024 Manguito Publicidad</div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const phrases = [
+                "Creamos diseños *impactantes*.",
+                "Estrategias que *convierten*.",
+                "Contenido que *engancha*.",
+                "Publicidad que *destaca*.",
+                "Historias que *inspiran*."
+            ];
             let phraseIndex = 0;
             const typingEffectElement = document.querySelector(".typing-effect");
 
@@ -242,111 +100,35 @@ q::before, q::after {
                 const phrase = phrases[phraseIndex];
                 let charIndex = 0;
                 typingEffectElement.innerHTML = "";
-                typingEffectElement.style.opacity = '1';
 
                 function typeCharacter() {
                     if (charIndex < phrase.length) {
-                        const currentChar = phrase[charIndex];
-                        if (currentChar === "*") {
+                        const char = phrase[charIndex];
+                        if (char === "*") {
                             typingEffectElement.innerHTML += "<span class='highlight'></span>";
                             charIndex++;
                         } else {
-                            const lastSpan = typingEffectElement.querySelector(".highlight:last-of-type");
-                            if (lastSpan) {
-                                lastSpan.textContent += currentChar;
-                            } else {
-                                typingEffectElement.innerHTML += currentChar;
-                            }
+                            const lastSpan = typingEffectElement.querySelector(".highlight:last-child");
+                            if (lastSpan) lastSpan.textContent += char;
+                            else typingEffectElement.innerHTML += char;
                             charIndex++;
                         }
-                        setTimeout(typeCharacter, 100);
+                        setTimeout(typeCharacter, 70);
                     } else {
                         setTimeout(() => {
-                            typingEffectElement.style.transition = 'opacity 1s';
-                            typingEffectElement.style.opacity = '0';
+                            typingEffectElement.style.opacity = 0;
                             setTimeout(() => {
                                 phraseIndex = (phraseIndex + 1) % phrases.length;
+                                typingEffectElement.style.opacity = 1;
                                 typePhrase();
-                            }, 1000);
-                        }, 2000);
+                            }, 400);
+                        }, 1200);
                     }
                 }
-
                 typeCharacter();
             }
-
             typePhrase();
-
-            // Emoji background animation
-            const emojis = ["❤️", "👍", "😂", "😍", "🎉", "🔥", "✨", "😊"];
-            const emojiBackground = document.createElement('div');
-            emojiBackground.classList.add('emoji-background');
-            document.body.appendChild(emojiBackground);
-
-            function createEmoji() {
-                const emojiElement = document.createElement('div');
-                emojiElement.classList.add('emoji');
-                emojiElement.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-                emojiElement.style.left = Math.random() * 100 + 'vw';
-                emojiElement.style.animationDuration = 8 + Math.random() * 4 + 's';
-
-                emojiBackground.appendChild(emojiElement);
-
-                setTimeout(() => {
-                    emojiBackground.removeChild(emojiElement);
-                }, 12000);
-            }
-
-            setInterval(createEmoji, 1000);
         });
     </script>
-</head>
-<body>
-    <div class="main-container">
-        <div class="content-wrapper">
-            <img src="logo.jpg" alt="Manguito" style="width: 100px; height: 100px;">
-            <h2 style="font-size: 24px; color: #fff; margin-top: 20px;">Manguito Publicidad</h2>
-            <div class="typing-effect"></div>
-                <a href="https://wa.link/phat12" target="_blank" class="btn-custom">
-                    <div>
-                     <i  class="fab fa-whatsapp"></i> Impulsa tu marca
-                    </div>
-                    <i class="fas fa-arrow-right arrow-icon"></i>
-                </a>
-                <a href="https://www.behance.net/manguitpublicidad" target="_blank" class="btn-custom">
-                    <div>
-                        <i class="fas fa-folder-open"></i> Proyectos Realizados</i>
-                    </div>
-                    <i class="fas fa-arrow-right arrow-icon"></i>
-                </a>
-                <a href="landing.html" target="_blank" class="btn-custom">
-                    <div>
-                       <i class="fa-solid fa-pen-nib"></i> Quienes somos
-                    </div>
-                    <i class="fas fa-arrow-right arrow-icon"></i>
-                </a>
-                <a href="planes.html"  class="btn-custom"> 
-                    <div>               
-                        <i  class="fas fa-briefcase"></i> Planes RRSS
-                    </div>
-                    <i class="fas fa-arrow-right arrow-icon"></i>
-                </a>-->
-            <div class="social-buttons d-flex justify-content-center">
-                <a href="https://web.facebook.com/ManguitoPublicidad" target="_blank">
-                    <i class="fab fa-facebook-f fb"></i>
-                </a>
-                <a href="https://www.instagram.com/manguitopublicidad" target="_blank">
-                    <i class="fab fa-instagram ig"></i>
-                </a>
-                <a href="https://www.tiktok.com/@manguitopublicidad" target="_blank">
-                    <i class="fab fa-tiktok tt"></i>
-                </a>
-                <a href="https://www.youtube.com/@manguitopublicidad" target="_blank">
-                    <i class="fab fa-youtube yt"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="footer">© 2024 Manguito Publicidad</div>
 </body>
 </html>
