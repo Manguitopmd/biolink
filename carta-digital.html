@@ -81,7 +81,7 @@
         }
 
         .accordion-content.active {
-            max-height: 700px; /* Aumentado para más contenido */
+            max-height: 700px;
             padding: 1.5rem;
         }
 
@@ -104,7 +104,7 @@
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgbaiconfont(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .btn-demo {
@@ -198,7 +198,7 @@
         <!-- Introducción -->
         <section class="intro-section">
             <h2 class="text-2xl font-bold mb-4 text-[var(--primary)]">🍽️📲 Atrae más clientes hoy</h2>
-            <p class="text-lg">Moderniza tu restaurante con un portal web adaptable, fácil de usar y diseñado para aumentar tus ventas. Incluye reservas en planes seleccionados.</p>
+            <p class="text-lg">Moderniza tu restaurante con un portal web adaptable que incluye tu menú. Actualizaciones diarias disponibles por solo S/ 1 por día.</p>
         </section>
 
         <!-- Planes -->
@@ -208,20 +208,21 @@
             <!-- Plan Básico -->
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h3 class="text-xl font-semibold text-[var(--primary)]">🍽️ Plan Básico – S/ 100</h3>
+                    <h3 class="text-xl font-semibold text-[var(--primary)]">🍽️ Plan Básico – S/ 50</h3>
                     <i class="fas fa-chevron-down toggle-icon"></i>
                 </div>
                 <div class="accordion-content">
-                    <p class="mb-4">Portal web profesional y responsive.</p>
+                    <p class="mb-4">Portal web profesional y responsive con menú incluido.</p>
                     <ul class="feature-list">
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info clave</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta con platos y precios</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú con platos y precios</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Interfaz rápida</li>
                     </ul>
+                    <p class="text-sm italic mt-2">Actualización diaria del menú: S/ 1 por día (opcional)</p>
                     <div class="flex justify-center gap-4 mt-4">
                         <a href="https://manguitopmd.github.io/carta_plan_basico/" target="_blank" class="btn-demo">Ver Demo</a>
-                        <button class="btn-primary select-plan" data-plan="Plan Básico – S/ 100">Elegir Plan</button>
+                        <button class="btn-primary select-plan" data-plan="Plan Básico – S/ 50">Elegir Plan</button>
                     </div>
                 </div>
             </div>
@@ -229,21 +230,21 @@
             <!-- Plan Menú del Día -->
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h3 class="text-xl font-semibold text-[var(--primary)]">🍛 Plan Menú del Día – S/ 120</h3>
+                    <h3 class="text-xl font-semibold text-[var(--primary)]">🍛 Plan Estándar – S/ 70</h3>
                     <i class="fas fa-chevron-down toggle-icon"></i>
                 </div>
                 <div class="accordion-content">
-                    <p class="mb-4">Web optimizada con menú diario.</p>
+                    <p class="mb-4">Web optimizada con menú y reservas.</p>
                     <ul class="feature-list">
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta completa</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú del día actualizable</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú completo</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Sección de reservas</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
                     </ul>
+                    <p class="text-sm italic mt-2">Actualización diaria del menú: S/ 1 por día (opcional)</p>
                     <div class="flex justify-center gap-4 mt-4">
                         <a href="https://manguitopmd.github.io/carta_plan_menu/" target="_blank" class="btn-demo">Ver Demo</a>
-                        <button class="btn-primary select-plan" data-plan="Plan Menú del Día – S/ 120">Elegir Plan</button>
+                        <button class="btn-primary select-plan" data-plan="Plan Estándar – S/ 70">Elegir Plan</button>
                     </div>
                 </div>
             </div>
@@ -251,21 +252,22 @@
             <!-- Plan Promos -->
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h3 class="text-xl font-semibold text-[var(--primary)]">🎉 Plan Promos – S/ 150</h3>
+                    <h3 class="text-xl font-semibold text-[var(--primary)]">🎉 Plan Promos – S/ 90</h3>
                     <i class="fas fa-chevron-down toggle-icon"></i>
                 </div>
                 <div class="accordion-content">
-                    <p class="mb-4">Diseño con foco en ofertas.</p>
+                    <p class="mb-4">Diseño con menú y foco en ofertas.</p>
                     <ul class="feature-list">
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta completa</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú completo</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Promociones destacadas</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Sección de reservas</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
                     </ul>
+                    <p class="text-sm italic mt-2">Actualización diaria del menú: S/ 1 por día (opcional)</p>
                     <div class="flex justify-center gap-4 mt-4">
                         <a href="https://manguitopmd.github.io/carta_plan_promos/" target="_blank" class="btn-demo">Ver Demo</a>
-                        <button class="btn-primary select-plan" data-plan="Plan Promos – S/ 150">Elegir Plan</button>
+                        <button class="btn-primary select-plan" data-plan="Plan Promos – S/ 90">Elegir Plan</button>
                     </div>
                 </div>
             </div>
@@ -273,22 +275,22 @@
             <!-- Plan Completo -->
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h3 class="text-xl font-semibold text-[var(--primary)]">🍴 Plan Completo – S/ 200</h3>
+                    <h3 class="text-xl font-semibold text-[var(--primary)]">🍴 Plan Completo – S/ 120</h3>
                     <i class="fas fa-chevron-down toggle-icon"></i>
                 </div>
                 <div class="accordion-content">
-                    <p class="mb-4">Portal moderno y completo.</p>
+                    <p class="mb-4">Portal moderno con menú completo.</p>
                     <ul class="feature-list">
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio destacado</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta completa</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú del día</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú completo</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Promociones</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Sección de reservas</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
                     </ul>
+                    <p class="text-sm italic mt-2">Actualización diaria del menú: S/ 1 por día (opcional)</p>
                     <div class="flex justify-center gap-4 mt-4">
                         <a href="https://manguitopmd.github.io/carta_plan_completo/" target="_blank" class="btn-demo">Ver Demo</a>
-                        <button class="btn-primary select-plan" data-plan="Plan Completo – S/ 200">Elegir Plan</button>
+                        <button class="btn-primary select-plan" data-plan="Plan Completo – S/ 120">Elegir Plan</button>
                     </div>
                 </div>
             </div>
@@ -296,24 +298,24 @@
             <!-- Plan Pro -->
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h3 class="text-xl font-semibold text-[var(--primary)]">🛒 Plan Pro – S/ 250 <span class="text-sm font-normal">(Ideal para Delivery)</span></h3>
+                    <h3 class="text-xl font-semibold text-[var(--primary)]">🛒 Plan Pro – S/ 150 <span class="text-sm font-normal">(Ideal para Delivery)</span></h3>
                     <i class="fas fa-chevron-down toggle-icon"></i>
                 </div>
                 <div class="accordion-content">
-                    <p class="mb-4">Portal optimizado para pedidos.</p>
+                    <p class="mb-4">Portal optimizado para pedidos y reservas.</p>
                     <ul class="feature-list">
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta con selección</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú del día</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú con selección</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Promociones</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Sección de reservas</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carrito integrado</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Pedido por WhatsApp</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
                     </ul>
+                    <p class="text-sm italic mt-2">Actualización diaria del menú: S/ 1 por día (opcional)</p>
                     <div class="flex justify-center gap-4 mt-4">
                         <a href="https://manguitopmd.github.io/carta_plan_pro/" target="_blank" class="btn-demo">Ver Demo</a>
-                        <button class="btn-primary select-plan" data-plan="Plan Pro – S/ 250">Elegir Plan</button>
+                        <button class="btn-primary select-plan" data-plan="Plan Pro – S/ 150">Elegir Plan</button>
                     </div>
                 </div>
             </div>
@@ -328,11 +330,11 @@
                 <input type="tel" id="phoneNumber" placeholder="Número de WhatsApp" class="form-input">
                 <select id="plan-select" class="form-select">
                     <option value="">Selecciona un plan</option>
-                    <option value="Plan Básico – S/ 100">Plan Básico – S/ 100</option>
-                    <option value="Plan Menú del Día – S/ 120">Plan Menú del Día – S/ 120</option>
-                    <option value="Plan Promos – S/ 150">Plan Promos – S/ 150</option>
-                    <option value="Plan Completo – S/ 200">Plan Completo – S/ 200</option>
-                    <option value="Plan Pro – S/ 250">Plan Pro – S/ 250</option>
+                    <option value="Plan Básico – S/ 50">Plan Básico – S/ 50</option>
+                    <option value="Plan Estándar – S/ 70">Plan Estándar – S/ 70</option>
+                    <option value="Plan Promos – S/ 90">Plan Promos – S/ 90</option>
+                    <option value="Plan Completo – S/ 120">Plan Completo – S/ 120</option>
+                    <option value="Plan Pro – S/ 150">Plan Pro – S/ 150</option>
                 </select>
                 <div class="text-center">
                     <img src="qr-pago.jpg" alt="QR de Pago" class="qr-image mx-auto mb-4">
@@ -381,6 +383,7 @@
                 modal.style.display = 'flex';
             });
         });
+
         // Enviar por WhatsApp
         document.getElementById('send-whatsapp').addEventListener('click', () => {
             const restaurantName = document.getElementById('restaurantName').value;
@@ -393,17 +396,18 @@
             }
 
             const message = `¡Hola Manguito Publicidad! 👋\n\n` +
-                            `*Solicitud de Portal Digital:*\n` +
-                            `- Restaurante: ${restaurantName}\n` +
-                            `- Teléfono: ${phoneNumber}\n` +
-                            `- Plan: ${planSelect}\n` +
-                            `${planSelect === "Plan Básico – S/ 100" ? "(Sin reservas)" : "(Con sección de reservas)"}\n\n` +
-                            `Ya realicé el pago. Adjunto el comprobante. ¡Gracias!`;
+                           `*Solicitud de Portal Digital:*\n` +
+                           `- Restaurante: ${restaurantName}\n` +
+                           `- Teléfono: ${phoneNumber}\n` +
+                           `- Plan: ${planSelect}\n` +
+                           `${planSelect === "Plan Básico – S/ 50" ? "(Sin reservas)" : "(Con sección de reservas)"}\n` +
+                           `- Actualización diaria: Por confirmar (S/ 1 por día)\n\n` +
+                           `Ya realicé el pago del plan. Adjunto el comprobante. ¡Gracias!`;
 
-            // Reemplazar el enlace acortado por el número directo
             window.open(`https://wa.me/51961360935?text=${encodeURIComponent(message)}`, '_blank');
             document.getElementById('payment-modal').style.display = 'none';
         });
+
         // Cerrar modal al hacer clic fuera
         document.getElementById('payment-modal').addEventListener('click', (e) => {
             if (e.target === e.currentTarget) {
