@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Manguito Publicidad - Portales digitales para restaurantes. Atrae más clientes con una carta digital profesional.">
-    <meta name="keywords" content="carta digital, restaurantes, menú digital, portal web, delivery">
+    <meta name="keywords" content="carta digital, restaurantes, menú digital, portal web, delivery, reservas">
     <title>Manguito Publicidad - Cartas Digitales</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -81,7 +81,7 @@
         }
 
         .accordion-content.active {
-            max-height: 600px;
+            max-height: 700px; /* Aumentado para más contenido */
             padding: 1.5rem;
         }
 
@@ -104,7 +104,7 @@
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgbaiconfont(0, 0, 0, 0.3);
         }
 
         .btn-demo {
@@ -198,7 +198,7 @@
         <!-- Introducción -->
         <section class="intro-section">
             <h2 class="text-2xl font-bold mb-4 text-[var(--primary)]">🍽️📲 Atrae más clientes hoy</h2>
-            <p class="text-lg">Moderniza tu restaurante con un portal web adaptable, fácil de usar y diseñado para aumentar tus ventas. Descubre nuestros planes personalizados.</p>
+            <p class="text-lg">Moderniza tu restaurante con un portal web adaptable, fácil de usar y diseñado para aumentar tus ventas. Incluye reservas en planes seleccionados.</p>
         </section>
 
         <!-- Planes -->
@@ -238,6 +238,7 @@
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta completa</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú del día actualizable</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Sección de reservas</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
                     </ul>
                     <div class="flex justify-center gap-4 mt-4">
@@ -259,6 +260,7 @@
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta completa</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Promociones destacadas</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Sección de reservas</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
                     </ul>
                     <div class="flex justify-center gap-4 mt-4">
@@ -281,6 +283,7 @@
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta completa</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú del día</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Promociones</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Sección de reservas</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
                     </ul>
                     <div class="flex justify-center gap-4 mt-4">
@@ -303,6 +306,7 @@
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta con selección</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú del día</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Promociones</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Sección de reservas</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carrito integrado</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Pedido por WhatsApp</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto completo</li>
@@ -377,7 +381,6 @@
                 modal.style.display = 'flex';
             });
         });
-
         // Enviar por WhatsApp
         document.getElementById('send-whatsapp').addEventListener('click', () => {
             const restaurantName = document.getElementById('restaurantName').value;
@@ -390,16 +393,17 @@
             }
 
             const message = `¡Hola Manguito Publicidad! 👋\n\n` +
-                           `*Solicitud de Portal Digital:*\n` +
-                           `- Restaurante: ${restaurantName}\n` +
-                           `- Teléfono: ${phoneNumber}\n` +
-                           `- Plan: ${planSelect}\n\n` +
-                           `Ya realicé el pago. Adjunto el comprobante. ¡Gracias!`;
+                            `*Solicitud de Portal Digital:*\n` +
+                            `- Restaurante: ${restaurantName}\n` +
+                            `- Teléfono: ${phoneNumber}\n` +
+                            `- Plan: ${planSelect}\n` +
+                            `${planSelect === "Plan Básico – S/ 100" ? "(Sin reservas)" : "(Con sección de reservas)"}\n\n` +
+                            `Ya realicé el pago. Adjunto el comprobante. ¡Gracias!`;
 
-            window.open(`https://wa.link/phat12?text=${encodeURIComponent(message)}`, '_blank');
+            // Reemplazar el enlace acortado por el número directo
+            window.open(`https://wa.me/51961360935?text=${encodeURIComponent(message)}`, '_blank');
             document.getElementById('payment-modal').style.display = 'none';
         });
-
         // Cerrar modal al hacer clic fuera
         document.getElementById('payment-modal').addEventListener('click', (e) => {
             if (e.target === e.currentTarget) {
