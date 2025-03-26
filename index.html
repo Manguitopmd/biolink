@@ -37,6 +37,36 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .webs-amigas {
+            background: rgba(31, 41, 55, 0.9);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            max-width: 24rem; /* Alineado con el ancho del content-wrapper */
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .webs-amigas h3 {
+            color: #facc15;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .webs-amigas a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: rgba(55, 65, 81, 0.8);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .webs-amigas a:hover {
+            background: rgba(75, 85, 99, 0.8);
+            color: #facc15;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center gradient-bg text-white font-['Poppins',sans-serif]">
@@ -62,7 +92,6 @@
             <div><i class="fas fa-briefcase mr-2 text-lg"></i> Planes RRSS</div>
             <i class="fas fa-arrow-right text-yellow-400"></i>
         </a>
-        <!-- Nuevo botón de Carta Digital -->
         <a href="carta-digital.html" target="_blank" class="flex justify-between items-center w-full bg-gray-700 text-white border border-yellow-400 rounded-lg p-3 mb-3 hover:-translate-y-1 hover:shadow-lg hover:text-yellow-400 transition-all duration-300">
             <div><i class="fas fa-envelope mr-2 text-lg"></i> Carta Digital</div>
             <i class="fas fa-arrow-right text-yellow-400"></i>
@@ -82,6 +111,16 @@
             </a>
         </div>
     </div>
+
+    <!-- Nueva sección: Webs Amigas -->
+    <div class="webs-amigas mx-4">
+        <h3 class="text-lg">Webs Amigas</h3>
+        <a href="https://eternaconexionpmd.github.io/eternaconexionpmd/" target="_blank">
+            <div><i class="fas fa-heart mr-2"></i> Eterna Conexión - Portales para honrar familiares fallecidos</div>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
     <div class="text-gray-400 text-sm mt-6">© 2024 Manguito Publicidad</div>
 
     <script>
