@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manguito Publicidad - Portales digitales para restaurantes. ¡Atrae más clientes con una carta digital profesional y 50% OFF por lanzamiento, solo para los 10 primeros!">
+    <meta name="keywords" content="carta digital, restaurantes, menú digital, portal web, delivery, reservas, oferta lanzamiento">
+    <title>Manguito Publicidad - Cartas Digitales para Triunfar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #facc15;
+            --secondary: #f97316;
+            --dark-bg: #1f2937;
+            --darker-bg: #111827;
+            --text-light: #ffffff;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg));
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .animate-fade-in { animation: fadeIn 1s ease forwards; }
+        .animate-slide-up { animation: slideUp 0.8s ease forwards; }
+
+        /* Header */
+        .header {
+            background: rgba(31, 41, 55, 0.95);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            animation: fadeIn 1s ease;
+        }
+
+        .header img {
+            transition: transform 0.3s ease;
+        }
+
+        .header img:hover {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        /* Intro Section */
+        .intro-section {
+            background: rgba(31, 41, 55, 0.9);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 2px solid var(--primary);
+            animation: slideUp 0.8s ease;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: rgba(31, 41, 55, 0.9);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 2px solid var(--primary);
+            animation: slideUp 0.8s ease;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* Aspect ratio 16:9 */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-controls {
+            background: rgba(55, 65, 81, 0.9);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .video-controls button {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: #1f2937;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-controls button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(249, 115, 22, 0.5);
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            height: 5px;
+            background: rgba(156, 163, 175, 0.3);
+            border-radius: 5px;
+            margin: 0 1rem;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 5px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* Acordeones */
+        .accordion-item {
+            background: rgba(31, 41, 55, 0.9);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .accordion-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to right, rgba(31, 41, 55, 0.9), rgba(55, 65, 81, 0.9));
+            transition: background 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: linear-gradient(to right, rgba(55, 65, 81, 0.9), rgba(75, 85, 99, 0.9));
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 1.5rem;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 700px;
+            padding: 1.5rem;
+        }
+
+        .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-icon.active {
+            transform: rotate(180deg);
+        }
+
+        /* Precio destacado */
+        .price-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .price-highlight {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .original-price {
+            font-size: 1rem;
+            text-decoration: line-through;
+            color: rgba(156, 163, 175, 0.6); /* Más opaco */
+        }
+
+        .price-label {
+            font-size: 0.8rem;
+            color: rgba(156, 163, 175, 0.8);
+        }
+
+        /* Botones */
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: #1f2937;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: pulse 2s infinite;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.5);
+        }
+
+        .btn-demo {
+            background: #3b82f6;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-demo:hover {
+            transform: translateY(-3px);
+            background: #2563eb;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-direction: column; /* Por defecto en celular */
+        }
+
+        @media (min-width: 640px) {
+            .button-group {
+                flex-direction: row; /* En pantallas grandes, horizontal */
+            }
+        }
+
+        /* Lista de características */
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+            animation-delay: calc(var(--order) * 0.1s);
+        }
+
+        /* Selector de duración */
+        .duration-select {
+            background: rgba(55, 65, 81, 0.9);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 0.5rem;
+            color: white;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-content {
+            background: var(--dark-bg);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            animation: slideIn 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            background: rgba(55, 65, 81, 0.9);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            color: white;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus, .form-select:focus {
+            border-color: var(--secondary);
+            outline: none;
+        }
+
+        .qr-image {
+            max-width: 200px;
+            border-radius: 8px;
+            border: 1px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .qr-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Promo Highlight */
+        .promo-text {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 2rem;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div class="container">
+        <!-- Header -->
+        <div class="header text-center animate-fade-in">
+            <img src="logo.jpg" alt="Manguito Publicidad" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-[var(--primary)]/50">
+            <h1 class="text-3xl md:text-4xl font-bold text-[var(--primary)]">🍽️ ¡Digitaliza tu Restaurante y Triunfa!</h1>
+            <p class="text-lg mt-2 opacity-90">Atrae más clientes con una carta digital profesional y moderna. <span class="promo-text">¡50% OFF por lanzamiento, solo para los 10 primeros!</span> 🚀 ¡No esperes más!</p>
+            <a href="#planes" class="btn-primary mt-4 inline-block">¡Obtén tu carta ahora!</a>
+        </div>
+
+        <!-- Introducción -->
+        <section class="intro-section animate-slide-up">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-[var(--primary)]">🍽️📲 ¡Convierte Visitas en Ventas!</h2>
+            <p class="text-lg">Moderniza tu restaurante con un portal web atractivo y fácil de usar. <span class="promo-text">50% de descuento por lanzamiento</span>, exclusivo para los 10 primeros. 🔥 ¡Haz que tu negocio destaque hoy!</p>
+            <p class="text-sm mt-2 italic text-gray-300">¡Quedan pocos cupos! Oferta válida solo esta semana.</p>
+        </section>
+
+        <!-- Video Promocional -->
+        <section class="video-section animate-slide-up">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-[var(--primary)]">🎥 Video Promocional</h2>
+            <p class="text-lg mb-4">Descubre cómo nuestras cartas digitales pueden transformar tu restaurante.</p>
+            <div class="video-container">
+                <iframe id="promo-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1&controls=0&rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-controls">
+                <button id="play-pause"><i class="fas fa-play"></i></button>
+                <div class="progress-bar" id="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <button id="mute"><i class="fas fa-volume-up"></i></button>
+            </div>
+        </section>
+
+        <!-- Planes -->
+        <section class="mb-8" id="planes">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-[var(--primary)] animate-fade-in">Elige tu Plan Perfecto</h2>
+
+            <!-- Plan Básico -->
+            <div class="accordion-item animate-slide-up" style="animation-delay: 0.1s;">
+                <div class="accordion-header">
+                    <div class="price-container">
+                        <h3 class="text-xl font-semibold text-[var(--primary)]">🍽️ Plan Básico</h3>
+                        <p class="price-highlight" data-plan="Plan Básico" data-monthly="14.90" data-semestral="69.90" data-annual="99.90">S/ 14.90 <span class="text-sm">por mes</span></p>
+                        <p><span class="original-price">S/ 30</span> <span class="price-label">(precio real)</span></p>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="mb-4">¡Empieza a digitalizar tu restaurante con lo esencial y atrae clientes ya! <span class="promo-text">Precio promocional con 50% OFF para los 10 primeros.</span></p>
+                    <ul class="feature-list">
+                        <li style="--order: 1;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info clave</li>
+                        <li style="--order: 2;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta fija con platos y precios</li>
+                        <li style="--order: 3;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto básico</li>
+                        <li style="--order: 4;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> QR para acceso fácil</li>
+                    </ul>
+                    <select class="duration-select" data-plan="Plan Básico">
+                        <option value="monthly">Mensual</option>
+                        <option value="semestral">6 meses</option>
+                        <option value="annual">Anual</option>
+                    </select>
+                    <div class="button-group">
+                        <a href="https://manguitopmd.github.io/carta_plan_basico/" target="_blank" class="btn-demo">Ver Demo</a>
+                        <button class="btn-primary select-plan" data-plan="Plan Básico" data-price="S/ 14.90">¡Elegir Ahora!</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan Estándar -->
+            <div class="accordion-item animate-slide-up" style="animation-delay: 0.2s;">
+                <div class="accordion-header">
+                    <div class="price-container">
+                        <h3 class="text-xl font-semibold text-[var(--primary)]">🍛 Plan Estándar</h3>
+                        <p class="price-highlight" data-plan="Plan Estándar" data-monthly="24.90" data-semestral="119.90" data-annual="179.90">S/ 24.90 <span class="text-sm">por mes</span></p>
+                        <p><span class="original-price">S/ 50</span> <span class="price-label">(precio real)</span></p>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="mb-4">¡Destaca con una web optimizada y mantén a tus clientes informados! <span class="promo-text">Precio promocional con 50% OFF para los 10 primeros.</span></p>
+                    <ul class="feature-list">
+                        <li style="--order: 1;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info</li>
+                        <li style="--order: 2;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta fija</li>
+                        <li style="--order: 3;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú diario actualizable</li>
+                        <li style="--order: 4;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto con reservas</li>
+                        <li style="--order: 5;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> QR para acceso fácil</li>
+                    </ul>
+                    <p class="text-sm italic mt-2">Actualización diaria del menú: S/ 1 por día (opcional)</p>
+                    <select class="duration-select" data-plan="Plan Estándar">
+                        <option value="monthly">Mensual</option>
+                        <option value="semestral">6 meses</option>
+                        <option value="annual">Anual</option>
+                    </select>
+                    <div class="button-group">
+                        <a href="https://manguitopmd.github.io/carta_plan_menu/" target="_blank" class="btn-demo">Ver Demo</a>
+                        <button class="btn-primary select-plan" data-plan="Plan Estándar" data-price="S/ 24.90">¡Elegir Ahora!</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan Promos -->
+            <div class="accordion-item animate-slide-up" style="animation-delay: 0.3s;">
+                <div class="accordion-header">
+                    <div class="price-container">
+                        <h3 class="text-xl font-semibold text-[var(--primary)]">🎉 Plan Promos</h3>
+                        <p class="price-highlight" data-plan="Plan Promos" data-monthly="29.90" data-semestral="149.90" data-annual="239.90">S/ 29.90 <span class="text-sm">por mes</span></p>
+                        <p><span class="original-price">S/ 60</span> <span class="price-label">(precio real)</span></p>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="mb-4">¡Atrae más clientes con promociones irresistibles! <span class="promo-text">Precio promocional con 50% OFF para los 10 primeros.</span></p>
+                    <ul class="feature-list">
+                        <li style="--order: 1;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info</li>
+                        <li style="--order: 2;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta fija</li>
+                        <li style="--order: 3;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Sección de promociones</li>
+                        <li style="--order: 4;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto con reservas</li>
+                        <li style="--order: 5;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> QR para acceso fácil</li>
+                    </ul>
+                    <select class="duration-select" data-plan="Plan Promos">
+                        <option value="monthly">Mensual</option>
+                        <option value="semestral">6 meses</option>
+                        <option value="annual">Anual</option>
+                    </select>
+                    <div class="button-group">
+                        <a href="https://manguitopmd.github.io/carta_plan_promos/" target="_blank" class="btn-demo">Ver Demo</a>
+                        <button class="btn-primary select-plan" data-plan="Plan Promos" data-price="S/ 29.90">¡Elegir Ahora!</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan Completo -->
+            <div class="accordion-item animate-slide-up" style="animation-delay: 0.4s;">
+                <div class="accordion-header">
+                    <div class="price-container">
+                        <h3 class="text-xl font-semibold text-[var(--primary)]">🍴 Plan Completo</h3>
+                        <p class="price-highlight" data-plan="Plan Completo" data-monthly="39.90" data-semestral="199.90" data-annual="319.90">S/ 39.90 <span class="text-sm">por mes</span></p>
+                        <p><span class="original-price">S/ 80</span> <span class="price-label">(precio real)</span></p>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="mb-4">¡Todo lo que necesitas para brillar y aumentar tus ventas! <span class="promo-text">Precio promocional con 50% OFF para los 10 primeros.</span></p>
+                    <ul class="feature-list">
+                        <li style="--order: 1;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio destacado</li>
+                        <li style="--order: 2;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta fija</li>
+                        <li style="--order: 3;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú diario actualizable</li>
+                        <li style="--order: 4;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Sección de promociones</li>
+                        <li style="--order: 5;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto con reservas</li>
+                        <li style="--order: 6;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> QR para acceso fácil</li>
+                    </ul>
+                    <p class="text-sm italic mt-2">Actualización diaria del menú: S/ 1 por día (opcional)</p>
+                    <select class="duration-select" data-plan="Plan Completo">
+                        <option value="monthly">Mensual</option>
+                        <option value="semestral">6 meses</option>
+                        <option value="annual">Anual</option>
+                    </select>
+                    <div class="button-group">
+                        <a href="https://manguitopmd.github.io/carta_plan_completo/" target="_blank" class="btn-demo">Ver Demo</a>
+                        <button class="btn-primary select-plan" data-plan="Plan Completo" data-price="S/ 39.90">¡Elegir Ahora!</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan Pro -->
+            <div class="accordion-item animate-slide-up" style="animation-delay: 0.5s;">
+                <div class="accordion-header">
+                    <div class="price-container">
+                        <h3 class="text-xl font-semibold text-[var(--primary)]">🛒 Plan Pro <span class="text-sm font-normal">(Ideal para Delivery)</span></h3>
+                        <p class="price-highlight" data-plan="Plan Pro" data-monthly="79.90" data-semestral="399.90" data-annual="639.90">S/ 79.90 <span class="text-sm">por mes</span></p>
+                        <p><span class="original-price">S/ 160</span> <span class="price-label">(precio real)</span></p>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="accordion-content">
+                    <p class="mb-4">¡El paquete definitivo para dominar con pedidos online! <span class="promo-text">Precio promocional con 50% OFF para los 10 primeros.</span></p>
+                    <ul class="feature-list">
+                        <li style="--order: 1;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio con info</li>
+                        <li style="--order: 2;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta fija</li>
+                        <li style="--order: 3;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Menú diario actualizable</li>
+                        <li style="--order: 4;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Sección de promociones</li>
+                        <li style="--order: 5;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto con reservas</li>
+                        <li style="--order: 6;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carrito de compra</li>
+                        <li style="--order: 7;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Pedidos por WhatsApp</li>
+                        <li style="--order: 8;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> QR para acceso fácil</li>
+                    </ul>
+                    <p class="text-sm italic mt-2">Actualización diaria del menú: S/ 1 por día (opcional)</p>
+                    <select class="duration-select" data-plan="Plan Pro">
+                        <option value="monthly">Mensual</option>
+                        <option value="semestral">6 meses</option>
+                        <option value="annual">Anual</option>
+                    </select>
+                    <div class="button-group">
+                        <a href="https://manguitopmd.github.io/carta_plan_pro/" target="_blank" class="btn-demo">Ver Demo</a>
+                        <button class="btn-primary select-plan" data-plan="Plan Pro" data-price="S/ 79.90">¡Elegir Ahora!</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de Pago -->
+        <div class="modal" id="payment-modal">
+            <div class="modal-content">
+                <h2 class="text-2xl font-bold text-[var(--primary)] mb-4">¡Adquiere tu Portal Hoy!</h2>
+                <p class="mb-4">Asegura tu descuento exclusivo para los 10 primeros.</p>
+                <p id="selected-plan-text" class="mb-4 text-sm"></p>
+                <div class="text-center">
+                    <img src="qr-pago.jpg" alt="QR de Pago" class="qr-image mx-auto mb-4">
+                    <p class="mb-4 text-sm">Escanea el QR, realiza el pago y envíanos el comprobante por WhatsApp.</p>
+                    <button id="send-whatsapp" class="btn-primary w-full">Enviar Comprobante</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-400 text-sm animate-fade-in">
+            © 2025 Manguito Publicidad - Todos los derechos reservados
+        </footer>
+    </div>
+
+    <script>
+        // Variables globales
+        let selectedPlan = null;
+        let selectedDuration = null;
+        let selectedPrice = null;
+
+        // Funcionalidad del acordeón
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.toggle-icon');
+                const isActive = content.classList.contains('active');
+
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('.toggle-icon').classList.remove('active');
+                });
+
+                if (!isActive) {
+                    content.classList.add('active');
+                    icon.classList.add('active');
+                }
+            });
+        });
+
+        // Actualizar precio dinámicamente al cambiar la duración
+        document.querySelectorAll('.duration-select').forEach(select => {
+            select.addEventListener('change', (e) => {
+                const planName = e.target.getAttribute('data-plan');
+                const duration = e.target.value;
+                const priceElement = document.querySelector(`.price-highlight[data-plan="${planName}"]`);
+                const monthlyPrice = priceElement.getAttribute('data-monthly');
+                const semestralPrice = priceElement.getAttribute('data-semestral');
+                const annualPrice = priceElement.getAttribute('data-annual');
+                const originalPrices = {
+                    'Plan Básico': { monthly: '30', semestral: '140', annual: '200' },
+                    'Plan Estándar': { monthly: '50', semestral: '240', annual: '360' },
+                    'Plan Promos': { monthly: '60', semestral: '300', annual: '480' },
+                    'Plan Completo': { monthly: '80', semestral: '400', annual: '640' },
+                    'Plan Pro': { monthly: '160', semestral: '800', annual: '1280' }
+                };
+
+                let newPrice, newDuration, originalPrice;
+                if (duration === 'monthly') {
+                    newPrice = monthlyPrice;
+                    newDuration = 'por mes';
+                    originalPrice = originalPrices[planName].monthly;
+                } else if (duration === 'semestral') {
+                    newPrice = semestralPrice;
+                    newDuration = 'por 6 meses';
+                    originalPrice = originalPrices[planName].semestral;
+                } else {
+                    newPrice = annualPrice;
+                    newDuration = 'por año';
+                    originalPrice = originalPrices[planName].annual;
+                }
+
+                priceElement.innerHTML = `S/ ${newPrice} <span class="text-sm">${newDuration}</span>`;
+                const originalPriceElement = priceElement.nextElementSibling;
+                originalPriceElement.innerHTML = `<span class="original-price">S/ ${originalPrice}</span> <span class="price-label">(precio real)</span>`;
+                const button = e.target.parentElement.querySelector('.select-plan');
+                button.setAttribute('data-price', `S/ ${newPrice}`);
+            });
+        });
+
+        // Abrir modal al seleccionar plan
+        document.querySelectorAll('.select-plan').forEach(button => {
+            button.addEventListener('click', () => {
+                const planName = button.getAttribute('data-plan');
+                const select = button.parentElement.parentElement.querySelector('.duration-select');
+                const duration = select.value;
+                const priceElement = document.querySelector(`.price-highlight[data-plan="${planName}"]`);
+                const monthlyPrice = priceElement.getAttribute('data-monthly');
+                const semestralPrice = priceElement.getAttribute('data-semestral');
+                const annualPrice = priceElement.getAttribute('data-annual');
+
+                selectedPlan = planName;
+                if (duration === 'monthly') {
+                    selectedDuration = 'Mensual';
+                    selectedPrice = monthlyPrice;
+                } else if (duration === 'semestral') {
+                    selectedDuration = '6 meses';
+                    selectedPrice = semestralPrice;
+                } else {
+                    selectedDuration = 'Anual';
+                    selectedPrice = annualPrice;
+                }
+
+                const modal = document.getElementById('payment-modal');
+                const selectedPlanText = document.getElementById('selected-plan-text');
+                selectedPlanText.textContent = `Ud. eligió: ${planName} (${selectedDuration}) - S/ ${selectedPrice}`;
+                modal.style.display = 'flex';
+                modal.style.opacity = 0;
+                setTimeout(() => modal.style.opacity = 1, 10); // Transición suave
+            });
+        });
+
+        // Enviar por WhatsApp
+        document.getElementById('send-whatsapp').addEventListener('click', () => {
+            if (!selectedPlan) {
+                alert('Por favor, selecciona un plan antes de continuar.');
+                return;
+            }
+
+            const message = `¡Hola Manguito Publicidad! 👋\n\n` +
+                           `*Solicitud de Portal Digital:*\n` +
+                           `- Plan: ${selectedPlan} (${selectedDuration})\n` +
+                           `- Monto: S/ ${selectedPrice}\n` +
+                           `${selectedPlan === "Plan Básico" ? "(Sin reservas)" : "(Con reservas)"}\n` +
+                           `- Actualización diaria: Por confirmar (S/ 1 por día)\n\n` +
+                           `Ya realicé el pago del plan con 50% OFF. Adjunto el comprobante. ¡Gracias!`;
+
+            window.open(`https://wa.me/51961360935?text=${encodeURIComponent(message)}`, '_blank');
+            document.getElementById('payment-modal').style.opacity = 0;
+            setTimeout(() => document.getElementById('payment-modal').style.display = 'none', 300);
+        });
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('payment-modal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                e.currentTarget.style.opacity = 0;
+                setTimeout(() => e.currentTarget.style.display = 'none', 300);
+            }
+        });
+
+        // Video Player Controls
+        const player = document.getElementById('promo-video');
+        const playPauseBtn = document.getElementById('play-pause');
+        const muteBtn = document.getElementById('mute');
+        const progressBar = document.getElementById('progress-bar');
+        const progress = document.getElementById('progress');
+        let isPlaying = false;
+        let isMuted = false;
+
+        // Inicializar YouTube API
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        let ytPlayer;
+        function onYouTubeIframeAPIReady() {
+            ytPlayer = new YT.Player('promo-video', {
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            playPauseBtn.addEventListener('click', () => {
+                if (isPlaying) {
+                    ytPlayer.pauseVideo();
+                } else {
+                    ytPlayer.playVideo();
+                }
+            });
+
+            muteBtn.addEventListener('click', () => {
+                if (isMuted) {
+                    ytPlayer.unMute();
+                    muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                    isMuted = false;
+                } else {
+                    ytPlayer.mute();
+                    muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                    isMuted = true;
+                }
+            });
+
+            progressBar.addEventListener('click', (e) => {
+                const rect = progressBar.getBoundingClientRect();
+                const offsetX = e.clientX - rect.left;
+                const totalWidth = rect.width;
+                const seekTime = (offsetX / totalWidth) * ytPlayer.getDuration();
+                ytPlayer.seekTo(seekTime, true);
+            });
+
+            setInterval(() => {
+                if (isPlaying) {
+                    const currentTime = ytPlayer.getCurrentTime();
+                    const duration = ytPlayer.getDuration();
+                    const percentage = (currentTime / duration) * 100;
+                    progress.style.width = `${percentage}%`;
+                }
+            }, 1000);
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+                isPlaying = true;
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+                isPlaying = false;
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        }
+    </script>
+</body>
+</html>
