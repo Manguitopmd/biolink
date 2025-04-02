@@ -425,7 +425,7 @@
                         <div class="price-container">
                             <h3 class="text-xl font-semibold text-[var(--primary)]">🔥 Plan Pro</h3>
                             <p class="price-highlight" data-plan="Plan Pro" data-one-time="350">S/ 350 <span class="text-sm">(pago único)</span></p>
-                            <p><span class="original-price">S/ 400</span> <span class="price-label">(precio real)</span></p>
+                            <p><span class="original-price">S/ 900</span> <span class="price-label">(precio real)</span></p>
                         </div>
                         <i class="fas fa-chevron-down toggle-icon"></i>
                     </div>
@@ -641,8 +641,8 @@
 
             let realPrice, savingsText;
             if (selectedModel === 'one-time') {
-                realPrice = selectedPlan === 'Plan Express' ? 'S/ 400' : 'S/ 700';
-                savingsText = `¡Estás ahorrando ${realPrice === 'S/ 400' ? 'S/ 200' : 'S/ 350'} con el 50% OFF para los 10 primeros! Solo pagas ${selectedPrice}.`;
+                realPrice = selectedPlan === 'Plan Express' ? 'S/ 400' : 'S/ 900';
+                savingsText = `¡Estás ahorrando ${realPrice === 'S/ 400' ? 'S/ 200' : 'S/ 550'} con el 50% OFF para los 10 primeros! Solo pagas ${selectedPrice}.`;
             } else {
                 realPrice = selectedPlan === 'Plan Express' ? 'S/ 100 + S/ 15/mes' : 'S/ 200 + S/ 30/mes';
                 savingsText = `¡Ahorras al empezar! Inscripción solo el 1er mes (${selectedPrice.split(' ')[1]}), luego solo ${selectedPrice.split(' ')[4]} mensual.`;
