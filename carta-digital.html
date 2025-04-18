@@ -3,52 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Manguito Publicidad - Cartas digitales para restaurantes en Perú. ¡Atrae más clientes con un menú digital profesional y 50% de descuento por lanzamiento!">
-    <meta name="keywords" content="carta digital, menú digital Perú, restaurantes, portal web, delivery, reservas, oferta lanzamiento">
-    <title>Manguito Publicidad - Cartas Digitales para Triunfar</title>
+    <meta name="description" content="Vende+ por Manguito Publicidad - Link, QR y app para vender por WhatsApp. ¡50% off hasta fin de mes!">
+    <meta name="keywords" content="Vende+, carta digital, pedidos WhatsApp, QR negocio, app Android, Perú">
+    <title>Vende+ - Manguito Publicidad 📲</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <style>
         :root {
             --primary: #facc15;
             --secondary: #f97316;
             --dark-bg: #1f2937;
-            --darker-bg: #111827;
+            --light-bg: #2d3748;
             --text-light: #ffffff;
-            --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            --whatsapp: #25D366;
+            --restaurante: #ef4444;
+            --tienda: #3b82f6;
+            --peluqueria: #8b5cf6;
         }
 
         body {
-            background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg));
+            background: linear-gradient(135deg, var(--dark-bg), var(--light-bg));
             font-family: 'Poppins', sans-serif;
             color: var(--text-light);
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 1.25rem;
         }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-        @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .animate-fade-in { animation: fadeIn 1s ease forwards; }
-        .animate-slide-up { animation: slideUp 0.8s ease forwards; }
+        .animate-fade-in { animation: fadeIn 0.8s ease forwards; }
 
         .header {
-            background: rgba(31, 41, 55, 0.95);
-            border-radius: 1rem;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow);
+            background: rgba(31, 41, 55, 0.9);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1.25rem;
             text-align: center;
-            border: 3px solid var(--secondary);
+            border: 1px solid var(--primary);
         }
 
         .header img {
@@ -56,21 +56,19 @@
         }
 
         .header img:hover {
-            transform: rotate(10deg) scale(1.1);
+            transform: scale(1.1);
         }
 
-        .intro-section, .video-section, .addons-section, .other-business-section {
-            background: rgba(31, 41, 55, 0.9);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border: 2px solid var(--primary);
+        .video-section {
+            margin-bottom: 1.25rem;
         }
 
         .video-container {
             position: relative;
             width: 100%;
             padding-top: 56.25%;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         .video-container iframe {
@@ -80,46 +78,36 @@
             width: 100%;
             height: 100%;
             border: none;
+            border-radius: 8px;
         }
 
         .accordion-item {
             background: rgba(31, 41, 55, 0.9);
-            border: 2px solid var(--primary);
-            border-radius: 12px;
-            margin-bottom: 1rem;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .accordion-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
         }
 
         .accordion-header {
-            padding: 1.5rem;
+            padding: 1rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(to right, rgba(31, 41, 55, 0.9), rgba(55, 65, 81, 0.9));
-            transition: background 0.3s ease;
-        }
-
-        .accordion-header:hover {
-            background: linear-gradient(to right, rgba(55, 65, 81, 0.9), rgba(75, 85, 99, 0.9));
+            background: rgba(31, 41, 55, 0.9);
         }
 
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            padding: 0 1.5rem;
-            transition: max-height 0.5s ease, padding 0.5s ease;
+            padding: 0 1rem;
+            transition: max-height 0.3s ease, padding 0.3s ease;
         }
 
         .accordion-content.active {
-            max-height: 800px;
-            padding: 1.5rem;
+            max-height: 600px;
+            padding: 1rem;
         }
 
         .toggle-icon {
@@ -137,74 +125,82 @@
         }
 
         .price-highlight {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
         }
 
         .original-price {
-            font-size: 1rem;
+            font-size: 0.75rem;
             text-decoration: line-through;
             color: rgba(156, 163, 175, 0.6);
-        }
-
-        .price-label {
-            font-size: 0.8rem;
-            color: rgba(156, 163, 175, 0.8);
         }
 
         .btn-primary {
             background: linear-gradient(to right, var(--primary), var(--secondary));
             color: #1f2937;
-            padding: 0.75rem 2rem;
+            padding: 0.75rem;
             border-radius: 8px;
             font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: pulse 2s infinite;
+            transition: transform 0.3s ease;
             width: 100%;
+            text-align: center;
+            font-size: 0.875rem;
+            min-height: 48px;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.5);
+            transform: scale(1.02);
         }
 
         .btn-demo {
-            background: #3b82f6;
             color: white;
-            padding: 0.5rem 1.5rem;
+            padding: 0.75rem;
             border-radius: 8px;
-            transition: transform 0.3s ease, background 0.3s ease;
+            transition: transform 0.3s ease;
             width: 100%;
+            text-align: center;
+            font-size: 0.875rem;
+            min-height: 48px;
         }
 
         .btn-demo:hover {
-            transform: translateY(-3px);
-            background: #2563eb;
+            transform: scale(1.02);
+        }
+
+        .demo-restaurante { background: var(--restaurante); }
+        .demo-tienda { background: var(--tienda); }
+        .demo-peluqueria { background: var(--peluqueria); }
+
+        .btn-back {
+            background: #6b7280;
+            color: white;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+            width: 100%;
+            text-align: center;
+            font-size: 0.875rem;
+            min-height: 48px;
+        }
+
+        .btn-back:hover {
+            transform: scale(1.02);
         }
 
         .button-group {
             display: flex;
+            flex-direction: column;
             gap: 1rem;
             margin-top: 1rem;
-            flex-direction: column;
         }
 
-        @media (min-width: 640px) {
-            .button-group {
-                flex-direction: row;
-            }
-        }
-
-        .feature-list li {
+        .benefits-list li {
             display: flex;
             align-items: flex-start;
             margin-bottom: 0.75rem;
-            opacity: 0;
-            animation: fadeIn 0.5s ease forwards;
-            animation-delay: calc(var(--order) * 0.1s);
+            font-size: 0.875rem;
         }
 
         .modal {
@@ -222,15 +218,24 @@
         }
 
         .modal-content {
-            background: var(--dark-bg);
-            border: 2px solid var(--primary);
+            background: rgba(31, 41, 55, 0.9);
+            border: 1px solid var(--primary);
             border-radius: 12px;
-            padding: 2rem;
+            padding: 1.25rem;
             width: 90%;
-            max-width: 600px;
-            animation: slideIn 0.3s ease;
-            box-shadow: var(--shadow);
+            max-width: 400px;
+            max-height: 80vh;
+            overflow-y: auto;
             position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: var(--primary);
         }
 
         .step {
@@ -243,97 +248,222 @@
 
         .step-navigation {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 1rem;
             margin-top: 1rem;
         }
 
         .qr-image {
-            max-width: 200px;
+            max-width: 280px;
+            width: 100%;
             border-radius: 8px;
             border: 1px solid var(--primary);
+            margin: 1rem auto;
+            display: block;
+            cursor: pointer;
             transition: transform 0.3s ease;
         }
 
         .qr-image:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
 
         .promo-text {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        footer {
-            margin-top: 2rem;
-            padding-bottom: 1rem;
-            text-align: center;
-            color: #9ca3af;
+            color: var(--primary);
+            font-weight: 600;
             font-size: 0.875rem;
         }
 
-        .addons-section {
-            background: linear-gradient(135deg, rgba(31, 41, 55, 0.95), rgba(55, 65, 81, 0.95));
-            border: 3px solid var(--secondary);
-            box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
-        }
-
-        .addons-section h2 {
-            font-size: 2rem;
+        footer {
+            margin-top: 1.25rem;
+            padding-bottom: 1.25rem;
             text-align: center;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #9ca3af;
+            font-size: 0.75rem;
         }
 
-        .promo-banner {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: #1f2937;
-            text-align: center;
-            padding: 0.5rem;
-            border-radius: 8px;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            animation: pulse 2s infinite;
-        }
-
-        .addon-option {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .addon-option input {
-            margin-right: 0.5rem;
-        }
-
-        .savings-text {
-            color: #facc15;
-            font-weight: bold;
-        }
-
-        .whatsapp-float {
+        .chat-float {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: #25D366;
+            background: var(--whatsapp);
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
             z-index: 1000;
         }
 
-        .whatsapp-float:hover {
+        .chat-float:hover {
             transform: scale(1.1);
+        }
+
+        .chat-bubble-float {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: var(--whatsapp);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+        .chat-modal-content {
+            background: #f0f0f0;
+            border-radius: 12px;
+            padding: 0;
+            width: 90%;
+            max-width: 360px;
+            max-height: 70vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chat-header {
+            background: var(--whatsapp);
+            color: white;
+            padding: 0.75rem;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .chat-status {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .chat-body {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            max-height: 55vh;
+            overflow-y: auto;
+        }
+
+        .chat-bubble {
+            max-width: 80%;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            line-height: 1.4;
+        }
+
+        .chat-bubble.bot {
+            background: #e5f9e3;
+            color: #1f2937;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-bubble.user {
+            background: white;
+            color: #1f2937;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .chat-option {
+            background: #3b82f6;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background 0.3s ease;
+        }
+
+        .chat-option:hover {
+            background: #2563eb;
+        }
+
+        .chat-option.acquire-plan {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: #1f2937;
+        }
+
+        .chat-option.acquire-plan:hover {
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+        }
+
+        .typing-indicator {
+            display: flex;
+            gap: 0.25rem;
+            padding: 0.5rem;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #999;
+            border-radius: 50%;
+        }
+
+        .demo-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        .cart-table th, .cart-table td {
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(156, 163, 175, 0.2);
+            font-size: 0.875rem;
+        }
+
+        .cart-table th {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .cart-empty {
+            text-align: center;
+            font-style: italic;
+            opacity: 0.8;
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                max-width: 600px;
+                padding: 1.5rem;
+            }
+
+            .button-group, .demo-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-demo, .btn-back {
+                width: 80%;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
@@ -341,403 +471,451 @@
     <div class="container">
         <!-- Header -->
         <div class="header animate-fade-in">
-            <img src="logo.jpg" alt="Logo de Manguito Publicidad" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-[var(--primary)]/50" loading="lazy">
-            <h1 class="text-3xl md:text-4xl font-bold text-[var(--primary)]">🍽️ Digitaliza tu Restaurante ¡Hoy Mismo!</h1>
-            <p class="text-lg mt-2 opacity-90">Aumenta tus ventas con una carta digital moderna y fácil de usar.</p>
-            <p class="promo-text mt-2">🎉 ¡50% Descuento por Lanzamiento!</p>
-            <a href="#planes" class="btn-primary mt-4 inline-block">📲 ¡Aprovecha Ahora!</a>
+            <img src="logo.jpg" alt="Logo de Manguito Publicidad" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-[var(--primary)]/50" loading="lazy">
+            <h1 class="text-xl font-bold text-[var(--primary)]">📲 Vende+ para Crecer</h1>
+            <p class="text-sm mt-1 opacity-90">Tu amigo para vender 😊</p>
+            <p class="text-sm mb-2">Digitaliza tu negocio con link, QR y app 📱. ¡Plan de S/600, ahora S/300 hasta fin de mes! 💸</p>
+            <p class="promo-text text-sm">Aprovecha el 50% off, solo hasta el 30 de abril 2025 🎉</p>
         </div>
 
-        <!-- Introducción -->
-        <section class="intro-section animate-slide-up">
-            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-[var(--primary)]">💡 Convierte Clientes en Ventas</h2>
-            <p class="text-lg">Dale a tu restaurante una presencia digital irresistible. Fácil, rápido y con un diseño profesional.</p>
-            <ul class="list-disc list-inside text-lg mt-3">
-                <li>📱 Accesible desde cualquier dispositivo.</li>
-                <li>🚀 Mejora la experiencia del cliente.</li>
-                <li>💰 Reduce costos de impresión.</li>
-            </ul>
-            <p class="promo-text mt-2">🔥 ¡50% Descuento por Lanzamiento!</p>
-        </section>
-
-        <!-- Video Promocional -->
-        <section class="video-section animate-slide-up">
-            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-[var(--primary)]">🎥 Mira cómo funciona</h2>
-            <p class="text-lg mb-4">Descubre en segundos cómo tu restaurante puede beneficiarse con nuestra solución.</p>
+        <!-- Video -->
+        <section class="video-section animate-fade-in">
             <div class="video-container">
-                <iframe id="promo-video" src="https://www.youtube.com/embed/5zayXnDOX2Y?enablejsapi=1&controls=0&rel=0&showinfo=0" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                <iframe src="https://www.youtube.com/embed/7xSyl9jRpzc?enablejsapi=1&controls=0&rel=0&showinfo=0" frameborder="0" allowfullscreen loading="lazy"></iframe>
             </div>
         </section>
 
-        <!-- Planes -->
-        <section class="mb-8" id="planes">
-            <h1 class="text-2xl md:text-3xl font-bold mb-6 text-center text-[var(--primary)] animate-fade-in">Elige tu Plan Perfecto</h1>
-            <div class="promo-banner">¡50% Descuento por Lanzamiento!</div>
-
-            <!-- Plan Express -->
-            <div class="accordion-item animate-slide-up" style="animation-delay: 0.1s;">
-                <div class="accordion-header">
-                    <div class="price-container">
-                        <h2 class="text-xl font-semibold text-[var(--primary)]">🚀 Plan Express</h2>
-                        <p class="text-sm opacity-80 mb-1">Para empezar a brillar online</p>
-                        <p class="price-highlight" data-plan="Plan Express" data-one-time="200">S/ 200 <span class="text-sm">(pago único)</span></p>
-                        <p><span class="original-price">S/ 400</span> <span class="price-label">(precio real)</span></p>
-                    </div>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
+        <!-- Vende+ Plan -->
+        <div class="accordion-item animate-fade-in">
+            <div class="accordion-header">
+                <div class="price-container">
+                    <h3 class="text-base font-semibold text-[var(--primary)]">Vende+ 💼</h3>
+                    <p class="text-xs opacity-80 mb-1">Ideal para cualquier negocio 😎</p>
+                    <p class="price-highlight">S/ 300 <span class="text-xs">(pago único)</span></p>
+                    <p><span class="original-price">S/ 600</span></p>
                 </div>
-                <div class="accordion-content">
-                    <p class="mb-4">¡Tu carta digital lista en un instante! Perfecto para brillar online con un diseño moderno y práctico que encanta a tus clientes.</p>
-                    <p class="promo-text mb-2">🎉 ¡50% Descuento por Lanzamiento!</p>
-                    <ul class="feature-list">
-                        <li style="--order: 1;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Inicio (Slider, horarios, botones de contacto, redes sociales, descripción)</li>
-                        <li style="--order: 2;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carta digital (Platos, categorías, fotos, descripción y precio)</li>
-                        <li style="--order: 3;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Contacto (Mapa de ubicación, botón de Google Maps)</li>
-                    </ul>
-                    <p class="text-sm mt-2"><strong>Actualización de Carta:</strong> S/ 50 por modificación</p>
-                    <div class="button-group">
-                        <a href="https://manguitopmd.github.io/plan_express/" target="_blank" class="btn-demo">Ver Demo</a>
-                        <button class="btn-primary select-plan" data-plan="Plan Express" data-price="S/ 200" data-model="one-time">¡Aprovecha el 50% Desc!</button>
-                    </div>
-                </div>
+                <i class="fas fa-chevron-down toggle-icon"></i>
             </div>
-
-            <!-- Plan Pro -->
-            <div class="accordion-item animate-slide-up" style="animation-delay: 0.2s;">
-                <div class="accordion-header">
-                    <div class="price-container">
-                        <h2 class="text-xl font-semibold text-[var(--primary)]">🔥 Plan Pro</h2>
-                        <p class="text-sm opacity-80 mb-1">Para potenciar tu delivery</p>
-                        <p class="price-highlight" data-plan="Plan Pro" data-one-time="350">S/ 350 <span class="text-sm">(pago único)</span></p>
-                        <p><span class="original-price">S/ 700</span> <span class="price-label">(precio real)</span></p>
-                    </div>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <p class="mb-4">¡Potencia tu delivery como nunca! Diseñado para restaurantes con entrega a domicilio o negocios 100% delivery, esta solución completa impulsa tus ventas con pedidos optimizados, reservas y más, todo a un clic.</p>
-                    <p class="promo-text mb-2">🎉 ¡50% Descuento por Lanzamiento!</p>
-                    <ul class="feature-list">
-                        <li style="--order: 1;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Todo lo del Plan Express</li>
-                        <li style="--order: 2;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Carrito de compras (Pedidos con Plin, Yape o efectivo)</li>
-                        <li style="--order: 3;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Formulario de reservas</li>
-                        <li style="--order: 4;"><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Pedido detallado enviado a WhatsApp</li>
-                    </ul>
-                    <p class="text-sm mt-2"><strong>Actualización de Carta:</strong> S/ 50 por modificación</p>
-                    <div class="button-group">
-                        <a href="https://manguitopmd.github.io/plan_pro/" target="_blank" class="btn-demo">Ver Demo</a>
-                        <button class="btn-primary select-plan" data-plan="Plan Pro" data-price="S/ 350" data-model="one-time">¡Aprovecha el 50% Desc!</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección Addons -->
-        <section class="addons-section animate-slide-up">
-            <h2>➕ Potencia tu Negocio con Addons</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="text-center">
-                    <p class="text-xl font-semibold text-[var(--primary)]">🎥 Spot del Restaurante</p>
-                    <p class="price-highlight">S/ 200</p>
-                    <p class="text-sm mt-2">¡Cautiva al instante! Un video promocional en tu página de inicio que muestra lo mejor de tu restaurante y atrae más clientes.</p>
-                </div>
-                <div class="text-center">
-                    <p class="text-xl font-semibold text-[var(--primary)]">📢 Sección de Promociones</p>
-                    <p class="price-highlight">S/ 100</p>
-                    <p class="text-sm mt-2">¡Tus ofertas brillan! Destaca promociones diarias o especiales para enganchar a tus clientes y aumentar tus ventas.</p>
-                </div>
-                <div class="text-center">
-                    <p class="text-xl font-semibold text-[var(--primary)]">🍽 Menú del Día</p>
-                    <p class="price-highlight">S/ 100</p>
-                    <p class="text-sm mt-2">¡Sorprende cada día! Muestra tu menú del día con estilo, manteniendo a tus clientes siempre interesados.</p>
-                </div>
-                <div class="text-center">
-                    <p class="text-xl font-semibold text-[var(--primary)]">🎁 Paquete Completo</p>
-                    <p class="price-highlight">S/ 350</p>
-                    <p class="text-sm mt-2">¡Todo en uno y ahorra! Incluye Spot, Promociones y Menú del Día por solo S/ 350 (valor real S/ 400).</p>
-                </div>
-            </div>
-            <p class="text-sm mt-4 italic text-center">Agrega estos extras al finalizar tu compra.</p>
-        </section>
-
-        <!-- Sección para Otros Negocios -->
-        <section class="other-business-section animate-slide-up">
-            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-[var(--primary)]">💼 Soluciones para Todo Tipo de Negocio</h2>
-            <p class="text-lg mb-4">¿Tienes una barbería, spa, boutique, arreglos florales o cualquier otro negocio? ¡Tenemos una versión ideal para ti! Personalizamos tu portal digital para destacar tus servicios, productos o creaciones con un diseño único que atrae clientes.</p>
-            <ul class="list-disc list-inside text-lg mt-3">
-                <li>💇‍♂️ <strong>Barberías:</strong> Muestra cortes, estilos y reservas online.</li>
-                <li>💆‍♀️ <strong>Spas:</strong> Promociona masajes, tratamientos y paquetes especiales.</li>
-                <li>👗 <strong>Boutiques:</strong> Exhibe ropa, accesorios y ofertas con estilo.</li>
-                <li>💐 <strong>Arreglos Florales:</strong> Destaca bouquets, decoraciones y pedidos personalizados.</li>
-                <li>🌟 <strong>Y más:</strong> Adaptamos tu portal a cualquier idea o negocio.</li>
-            </ul>
-            <div class="text-center mt-6">
+            <div class="accordion-content">
+                <p class="text-sm mb-2">¡Vende más por WhatsApp! 📲</p>
+                <h4 class="text-sm font-semibold mb-1 text-[var(--primary)]">Incluye</h4>
+                <ul class="benefits-list mb-2">
+                    <li>📸 Carta digital</li>
+                    <li>🛒 Carrito pedidos</li>
+                    <li>📅 Reservas</li>
+                    <li>🔗 Link, QR, app</li>
+                </ul>
+                <h4 class="text-sm font-semibold mb-1 text-[var(--primary)]">Beneficios</h4>
+                <ul class="benefits-list mb-2">
+                    <li>📲 Vende por WhatsApp</li>
+                    <li>👥 Fácil para clientes</li>
+                    <li>💸 Pago único</li>
+                    <li>🚀 Crece rápido</li>
+                </ul>
+                <p class="text-xs mb-2">Actualización: S/50 por cambio 🔄</p>
                 <div class="button-group">
-                    <a href="https://jvbarberia.github.io/info/" target="_blank" class="btn-demo">Ver Demo</a>
-                    <a href="https://wa.me/51961360935?text=Hola, quiero una solución digital para mi negocio (barbería/spa/boutique/floral/otro)." target="_blank" class="btn-primary">¡Contáctanos para Personalizar tu Negocio!</a>
+                    <a href="https://manguitopmd.github.io/vendemas/" target="_blank" class="btn-demo demo-tienda">👀 Ver Demo</a>
+                    <button class="btn-primary acquire-plan" data-item="Vende+ Plan" data-price="300">Adquirir mi Vende+ 🎉</button>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Modal de Pasarela de Pago -->
-        <div class="modal" id="payment-modal">
+        <!-- Vende+ para Todos 
+        <section class="businesses-section animate-fade-in" id="businesses">
+            <h2 class="text-lg font-bold mb-2 text-[var(--primary)]">💼 Vende+ para Todos</h2>
+            <p class="text-sm mb-2">Restaurante 🍽️, tienda 🛍️, peluquería 💇‍♂️.</p>
+            <div class="demo-links">
+                <a href="#" target="_blank" class="btn-demo demo-restaurante">🍽️ Demo Restaurante</a>
+                <a href="#" target="_blank" class="btn-demo demo-tienda">🛍️ Demo Tienda</a>
+                <a href="#" target="_blank" class="btn-demo demo-peluqueria">💇‍♂️ Demo Peluquería</a>
+            </div>
+        </section>-->
+
+        <!-- Carrito Modal -->
+        <div class="modal" id="cart-modal">
             <div class="modal-content">
-                <!-- Paso 1: Confirmación del Plan -->
-                <div class="step active" id="step-1">
-                    <h2 class="text-2xl font-bold text-[var(--primary)] mb-4">Paso 1: ¡Gran Elección!</h2>
-                    <p class="mb-2" id="selected-plan-text"></p>
-                    <p class="savings-text mb-4" id="savings-text"></p>
+                <span class="modal-close" id="cart-close">×</span>
+                <!-- Paso 1: Revisar Carrito -->
+                <div class="step active" id="cart-step-1">
+                    <h2 class="text-lg font-bold text-[var(--primary)] mb-2">🛒 Tu Carrito</h2>
+                    <p class="text-sm mb-2">¡50% off hoy! 💥 Revisa y paga 🎉</p>
+                    <div id="cart-content" class="text-sm"></div>
+                    <p class="promo-text mb-2 text-sm">Total: <span id="cart-total">S/ 0</span> 💸</p>
                     <div class="step-navigation">
-                        <button class="btn-primary" id="next-to-step-2">Siguiente: Potencia tu Plan</button>
+                        <button class="btn-primary" id="next-to-cart-step-2">Continuar al Pago 💳</button>
                     </div>
                 </div>
-
-                <!-- Paso 2: Agregar Addons -->
-                <div class="step" id="step-2">
-                    <h2 class="text-2xl font-bold text-[var(--primary)] mb-4">Paso 2: ¡Hazlo Aún Mejor!</h2>
-                    <p class="mb-4">Potencia tu plan con estos extras y destaca más:</p>
-                    <div class="addon-option">
-                        <input type="checkbox" id="addon-spot" data-price="200">
-                        <label for="addon-spot">🎥 Spot del Restaurante - S/ 200</label>
-                    </div>
-                    <div class="addon-option">
-                        <input type="checkbox" id="addon-promo" data-price="100">
-                        <label for="addon-promo">📢 Sección de Promociones - S/ 100</label>
-                    </div>
-                    <div class="addon-option">
-                        <input type="checkbox" id="addon-menu" data-price="100">
-                        <label for="addon-menu">🍽 Menú del Día - S/ 100</label>
-                    </div>
-                    <div class="addon-option">
-                        <input type="checkbox" id="addon-package" data-price="350">
-                        <label for="addon-package">🎁 Paquete Completo (Spot + Promociones + Menú) - S/ 350</label>
-                    </div>
+                <!-- Paso 2: QR de Pago -->
+                <div class="step" id="cart-step-2">
+                    <h2 class="text-lg font-bold text-[var(--primary)] mb-2">💸 Paga Ahora</h2>
+                    <p class="text-sm mb-2">¡Ahorra 50%! 💸 Clic en el QR, paga y envía el comprobante 📲</p>
+                    <a href="qr-pago.jpg" download="QR_Pago_Vende+.jpg">
+                        <img src="qr-pago.jpg" alt="QR de Pago" class="qr-image" loading="lazy">
+                    </a>
                     <div class="step-navigation">
-                        <button class="btn-demo" id="back-to-step-1">Atrás</button>
-                        <button class="btn-primary" id="next-to-step-3">Siguiente: Personaliza tu Pedido</button>
-                    </div>
-                </div>
-
-                <!-- Paso 3: Datos Personales -->
-                <div class="step" id="step-3">
-                    <h2 class="text-2xl font-bold text-[var(--primary)] mb-4">Paso 3: ¡Estás a un Paso!</h2>
-                    <p class="mb-4">Ingresa tu nombre completo para hacer tuyo este gran ahorro:</p>
-                    <input type="text" id="full-name" class="w-full p-2 rounded bg-[rgba(55,65,81,0.9)] text-white border border-[var(--primary)]" placeholder="Nombre Completo">
-                    <div class="step-navigation">
-                        <button class="btn-demo" id="back-to-step-2">Atrás</button>
-                        <button class="btn-primary" id="next-to-step-4">Siguiente: Finaliza y Gana</button>
-                    </div>
-                </div>
-
-                <!-- Paso 4: Resumen y Pago -->
-                <div class="step" id="step-4">
-                    <h2 class="text-2xl font-bold text-[var(--primary)] mb-4">Paso 4: ¡Tu Mejor Decisión!</h2>
-                    <p class="mb-2">Revisa tu pedido y asegura tu ahorro:</p>
-                    <div id="order-summary" class="mb-4 text-sm"></div>
-                    <p class="mb-4 promo-text">Total a Pagar Ahora: <span id="total-amount"></span></p>
-                    <div class="text-center">
-                        <img src="qr-pago.jpg" alt="QR de Pago Manguito Publicidad" class="qr-image mx-auto mb-4" loading="lazy">
-                        <p class="mb-4 text-sm">Escanea el QR, realiza el pago y envía el comprobante por WhatsApp.</p>
-                        <button class="btn-primary" id="send-whatsapp">¡Activa tu Éxito Ahora!</button>
+                        <button class="btn-back" id="back-to-cart-step-1">⬅️ Atrás</button>
+                        <button class="btn-primary" id="checkout-whatsapp">Finalizar en WhatsApp 📲</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- FAQ -->
-        <section class="intro-section animate-slide-up" id="faq">
-            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-[var(--primary)]">🤔 Preguntas Frecuentes</h2>
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <h3 class="text-lg font-semibold text-[var(--primary)]">¿Qué incluye cada plan?</h3>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
+        <!-- Chat FAQ Modal -->
+        <div class="modal" id="chat-modal">
+            <div class="chat-modal-content">
+                <span class="modal-close" id="chat-close">×</span>
+                <div class="chat-header">
+                    <i class="fas fa-user-circle fa-2x"></i>
+                    <div>
+                        <div>Manguito 😊</div>
+                        <div class="chat-status" id="chat-status">En línea</div>
+                    </div>
                 </div>
-                <div class="accordion-content">
-                    <p><strong>Plan Express:</strong> Tu carta digital básica con diseño moderno, horarios, contacto y redes sociales. ¡Perfecto para empezar a brillar online!</p>
-                    <p><strong>Plan Pro:</strong> Todo lo de Express más carrito de compras, pedidos por WhatsApp y formulario de reservas. ¡Ideal para potenciar tu delivery!</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <h3 class="text-lg font-semibold text-[var(--primary)]">¿Cómo funciona el 50% Desc?</h3>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <p>¡Es nuestra oferta de lanzamiento! Paga S/ 200 (Express) o S/ 350 (Pro) en vez of S/ 400 y S/ 700. ¡Ahorra y empieza ya!</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <h3 class="text-lg font-semibold text-[var(--primary)]">¿Qué pasa después de pagar?</h3>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <p>Tras enviar tu comprobante por WhatsApp, armamos tu portal en 48-72 horas. Te entregamos un enlace único y un QR para que lo uses de inmediato. ¡Fácil y rápido!</p>
+                <div class="chat-body" id="chat-body">
+                    <div class="chat-bubble bot">¡Hola! 😎 Soy Manguito tu asistente de Vende+. ¿Cómo te ayudo hoy?</div>
+                    <div class="chat-options" id="chat-options">
+                        <div class="chat-option" data-question="1">¿Qué es Vende+? 🌟</div>
+                        <div class="chat-option" data-question="2">¿Cuáles son los beneficios? 😎</div>
+                        <div class="chat-option" data-question="3">¿Cómo empiezo? 🚀</div>
+                        <div class="chat-option" data-question="4">¿Puedo personalizar? 🎨</div>
+                        <div class="chat-option" data-question="5">¿Qué métodos de pago? 💸</div>
+                        <div class="chat-option" data-question="6">¿Actualizar catálogo? 🔄</div>
+                        <div class="chat-option" data-question="7">¿Problemas técnicos? 🛠️</div>
+                    </div>
                 </div>
             </div>
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <h3 class="text-lg font-semibold text-[var(--primary)]">¿Puedo actualizar mi carta después?</h3>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <p>¡Claro! Por solo S/ 50 por cambio, actualizamos tu carta cuando quieras. Solo envíanos los nuevos platos y listo.</p>
-                </div>
-            </div>
-        </section>
+        </div>
 
         <!-- Footer -->
         <footer class="animate-fade-in">
-            © 2025 Manguito Publicidad - Todos los derechos reservados
+            © 2025 Manguito Publicidad 😊
         </footer>
     </div>
 
-    <!-- Botón WhatsApp Flotante -->
-    <a href="https://wa.me/51961360935" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp fa-2x"></i>
-    </a>
+    <!-- Chat Flotante y Burbuja -->
+    <div class="chat-bubble-float" id="chat-bubble-float">¡Estoy aquí para ayudarte! 😊</div>
+    <button class="chat-float" id="open-chat">
+        <i class="fas fa-comment fa-2x"></i>
+    </button>
+
+    <!-- Sonido de Mensaje -->
+    <audio id="message-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_2f4a3b97b8.mp3" preload="auto"></audio>
 
     <script>
-        let selectedPlan = null;
-        let selectedPrice = null;
-        let selectedModel = null;
-        let selectedAddons = [];
-        let fullName = '';
+        let cart = [];
+        let questionCount = 0;
+        let answeredQuestions = [];
+        const faqQuestions = {
+    1: "¿Qué es Vende+? 🌟",
+    2: "¿Cuáles son los beneficios? 😎",
+    3: "¿Cómo empiezo? 🚀",
+    4: "¿Puedo personalizar? 🎨",
+    5: "¿Cómo realizo el pago? 💸",
+    6: "¿Actualizar catálogo? 🔄",
+    7: "¿Problemas técnicos? 🛠️"
+};
+
+const faqAnswers = {
+    1: "Vende+ potencia tu WhatsApp 📱 con carta digital, pedidos, reservas, link, QR y app Android, ¡listo en 48h! 🚀 ¿Digitalizamos tu negocio? ¡Adquiérelo ya! 🎉",
+    2: "Vende+ simplifica ventas por WhatsApp 📲: carta digital, pedidos, diseño personalizado, ¡por S/300 (50% off)! 🤑 ¿Listo para crecer? ¡Adquiérelo ya! 🚀",
+    3: "Realiza el pago y envía tu comprobante, te contactamos y nos envías todo de tu negocio, horarios, productos o servicios por WhatsApp 📲. y en 48hrs tienes link, QR y app Android. 😊 ¡Empecemos! ¡Adquiérelo ya! 🎉",
+    4: "¡Sí! Personalizamos colores, logo y diseño a tu marca 🌟. ¿Quieres un Vende+ único? ¡Adquiérelo ya! 🎨",
+    5: "Puedes realizar el pago de s/ 300.00 de Vende+ por yape o plin, solo descarga o escanea el qr de pago (aprovecha el 50% de descuento hasta el 30 de abril) y envías el boucher a nuestro WhatsApp 📲. ¡Listo en 48h! 🤑",
+    6: "Tu primera actualización es gratis, luego el costo es de S/50 📋. Envíanos los cambios por WhatsApp,  😊 ¡Actualizamos y listo! ¡Adquiérelo ya! 🚀",
+    7: "Resolvemos problemas con link, QR o app rápido 😎. ¿Listo para Vende+? ¡Adquiérelo ya! 🚀"
+};
 
         // Acordeón
         document.querySelectorAll('.accordion-header').forEach(header => {
             header.addEventListener('click', () => {
                 const content = header.nextElementSibling;
                 const icon = header.querySelector('.toggle-icon');
-                const isActive = content.classList.contains('active');
-
-                if (isActive) {
-                    content.classList.remove('active');
-                    icon.classList.remove('active');
-                } else {
-                    content.classList.add('active');
-                    icon.classList.add('active');
-                }
+                content.classList.toggle('active');
+                icon.classList.toggle('active');
             });
         });
 
-        // Abrir modal y configurar pasarela
-        document.querySelectorAll('.select-plan').forEach(button => {
-            button.addEventListener('click', () => {
-                selectedPlan = button.getAttribute('data-plan');
-                selectedModel = button.getAttribute('data-model');
-                selectedPrice = button.getAttribute('data-price');
-                selectedAddons = [];
-                fullName = '';
+        // Carrito
+        function updateCart() {
+            const cartContent = document.getElementById('cart-content');
+            const cartTotal = document.getElementById('cart-total');
 
-                let realPrice = selectedPlan === 'Plan Express' ? 'S/ 400' : 'S/ 700';
-                let savingsText = `¡Gran decisión! ¡Estás ahorrando ${realPrice === 'S/ 400' ? 'S/ 200' : 'S/ 350'} con el 50% Descuento por Lanzamiento! Solo pagas ${selectedPrice}.`;
-
-                document.getElementById('selected-plan-text').textContent = `Plan: ${selectedPlan} - Precio Real: ${realPrice}`;
-                document.getElementById('savings-text').textContent = savingsText;
-
-                const modal = document.getElementById('payment-modal');
-                modal.style.display = 'flex';
-                modal.style.opacity = 0;
-                setTimeout(() => modal.style.opacity = 1, 10);
-
-                // Reiniciar pasos
-                document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
-                document.getElementById('step-1').classList.add('active');
-            });
-        });
-
-        // Navegación entre pasos
-        document.getElementById('next-to-step-2').addEventListener('click', () => {
-            document.getElementById('step-1').classList.remove('active');
-            document.getElementById('step-2').classList.add('active');
-        });
-
-        document.getElementById('back-to-step-1').addEventListener('click', () => {
-            document.getElementById('step-2').classList.remove('active');
-            document.getElementById('step-1').classList.add('active');
-        });
-
-        document.getElementById('next-to-step-3').addEventListener('click', () => {
-            selectedAddons = [];
-            document.querySelectorAll('#step-2 input[type="checkbox"]:checked').forEach(checkbox => {
-                selectedAddons.push({
-                    name: checkbox.nextElementSibling.textContent.split(' - ')[0],
-                    price: parseInt(checkbox.getAttribute('data-price'))
+            if (cart.length === 0) {
+                cartContent.innerHTML = '<p class="cart-empty">¡Carrito vacío! 😢</p>';
+                cartTotal.textContent = 'S/ 0';
+            } else {
+                let total = 0;
+                let html = `
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Ítem</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+                cart.forEach(item => {
+                    html += `
+                        <tr>
+                            <td>${item.name}</td>
+                            <td>S/ ${item.price}</td>
+                        </tr>
+                    `;
+                    total += item.price;
                 });
-            });
-            document.getElementById('step-2').classList.remove('active');
-            document.getElementById('step-3').classList.add('active');
+                html += '</tbody></table>';
+                cartContent.innerHTML = html;
+                cartTotal.textContent = `S/ ${total}`;
+            }
+        }
+
+        function handleAcquirePlan(button) {
+            const itemName = button.getAttribute('data-item');
+            const itemPrice = parseInt(button.getAttribute('data-price'));
+
+            if (!cart.some(item => item.name === itemName)) {
+                cart.push({ name: itemName, price: itemPrice });
+                updateCart();
+            }
+
+            const chatModal = document.getElementById('chat-modal');
+            if (chatModal.style.display === 'flex') {
+                chatModal.style.opacity = 0;
+                setTimeout(() => chatModal.style.display = 'none', 300);
+            }
+
+            const cartModal = document.getElementById('cart-modal');
+            cartModal.style.display = 'flex';
+            cartModal.style.opacity = 0;
+            setTimeout(() => cartModal.style.opacity = 1, 10);
+            document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
+            document.getElementById('cart-step-1').classList.add('active');
+        }
+
+        document.querySelectorAll('.acquire-plan').forEach(button => {
+            button.addEventListener('click', () => handleAcquirePlan(button));
         });
 
-        document.getElementById('back-to-step-2').addEventListener('click', () => {
-            document.getElementById('step-3').classList.remove('active');
-            document.getElementById('step-2').classList.add('active');
-        });
-
-        document.getElementById('next-to-step-4').addEventListener('click', () => {
-            fullName = document.getElementById('full-name').value.trim();
-            if (!fullName) {
-                alert('Por favor, ingresa tu nombre completo.');
-                return;
-            }
-
-            let basePrice = parseInt(selectedPrice.split(' ')[1]);
-            let total = basePrice;
-            let realPrice = selectedPlan === 'Plan Express' ? 400 : 700;
-            let summary = `Cliente: ${fullName}<br>Plan: ${selectedPlan} - Precio Real: S/ ${realPrice} <span class="savings-text">(¡Ahorraste S/ ${realPrice - basePrice} con el 50% Desc!)</span>`;
-
-            if (selectedAddons.length > 0) {
-                summary += '<br><strong>Addons:</strong><br>';
-                selectedAddons.forEach(addon => {
-                    summary += `- ${addon.name} - S/ ${addon.price}<br>`;
-                    total += addon.price;
-                });
-            }
-
-            document.getElementById('order-summary').innerHTML = summary;
-            document.getElementById('total-amount').textContent = `S/ ${total}`;
-            document.getElementById('step-3').classList.remove('active');
-            document.getElementById('step-4').classList.add('active');
-        });
-
-        // Enviar por WhatsApp
-        document.getElementById('send-whatsapp').addEventListener('click', () => {
-            if (!selectedPlan || !selectedModel || !fullName) {
-                alert('Por favor, completa todos los pasos antes de continuar.');
-                return;
-            }
-
-            let total = parseInt(document.getElementById('total-amount').textContent.split(' ')[1]);
-            let realPrice = selectedPlan === 'Plan Express' ? 400 : 700;
-            let message = `¡Hola Manguito Publicidad! 👋\n\n` +
-                         `*Solicitud de Portal Digital:*\n` +
-                         `- Cliente: ${fullName}\n` +
-                         `- Plan: ${selectedPlan}\n` +
-                         `- Precio Real: S/ ${realPrice}\n` +
-                         `- ¡Ahorro: S/ ${realPrice - parseInt(selectedPrice.split(' ')[1])} con el 50% Desc!\n`;
-
-            if (selectedAddons.length > 0) {
-                message += `*Addons:*\n`;
-                selectedAddons.forEach(addon => {
-                    message += `- ${addon.name} - S/ ${addon.price}\n`;
-                });
-            }
-
-            message += `*Total a Pagar Ahora: S/ ${total}*\n` +
-                      `Ya realicé el pago. Adjunto el comprobante. ¡Gracias por esta gran oportunidad!`;
-
-            window.open(`https://wa.me/51961360935?text=${encodeURIComponent(message)}`, '_blank');
-            const modal = document.getElementById('payment-modal');
+        document.getElementById('cart-close').addEventListener('click', () => {
+            const modal = document.getElementById('cart-modal');
             modal.style.opacity = 0;
             setTimeout(() => modal.style.display = 'none', 300);
         });
 
-        // Cerrar modal
-        document.getElementById('payment-modal').addEventListener('click', (e) => {
+        document.getElementById('cart-modal').addEventListener('click', (e) => {
             if (e.target === e.currentTarget) {
                 e.currentTarget.style.opacity = 0;
                 setTimeout(() => e.currentTarget.style.display = 'none', 300);
             }
         });
+
+        document.getElementById('next-to-cart-step-2').addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('¡Carrito vacío! 😢 Agrega algo primero.');
+                return;
+            }
+            document.getElementById('cart-step-1').classList.remove('active');
+            document.getElementById('cart-step-2').classList.add('active');
+        });
+
+        document.getElementById('back-to-cart-step-1').addEventListener('click', () => {
+            document.getElementById('cart-step-2').classList.remove('active');
+            document.getElementById('cart-step-1').classList.add('active');
+        });
+
+        document.getElementById('checkout-whatsapp').addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('¡Carrito vacío! 😢 Agrega algo primero.');
+                return;
+            }
+
+            let total = cart.reduce((sum, item) => sum + item.price, 0);
+            let message = `¡Hola Manguito Publicidad! 👋\n\n` +
+                         `*Solicitud Vende+:*\n` +
+                         cart.map(item => `- ${item.name}: S/ ${item.price}`).join('\n') + `\n` +
+                         `*Total: S/ ${total}*\n` +
+                         `Ya pagué. Adjunto comprobante. ¡Gracias! 😊`;
+
+            window.open(`https://wa.me/51961360935?text=${encodeURIComponent(message)}`, '_blank');
+            const modal = document.getElementById('cart-modal');
+            modal.style.opacity = 0;
+            setTimeout(() => modal.style.display = 'none', 300);
+            cart = [];
+            updateCart();
+        });
+
+        // Chat FAQ
+        document.getElementById('open-chat').addEventListener('click', () => {
+            const modal = document.getElementById('chat-modal');
+            modal.style.display = 'flex';
+            modal.style.opacity = 0;
+            setTimeout(() => modal.style.opacity = 1, 10);
+            resetChat();
+        });
+
+        document.getElementById('chat-close').addEventListener('click', () => {
+            const modal = document.getElementById('chat-modal');
+            modal.style.opacity = 0;
+            setTimeout(() => modal.style.display = 'none', 300);
+        });
+
+        document.getElementById('chat-modal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                e.currentTarget.style.opacity = 0;
+                setTimeout(() => e.currentTarget.style.display = 'none', 300);
+            }
+        });
+
+        function showTypingIndicator() {
+            const chatBody = document.getElementById('chat-body');
+            chatBody.innerHTML += `
+                <div class="typing-indicator" id="typing">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            `;
+            anime({
+                targets: '.typing-dot',
+                scale: [1, 1.2],
+                opacity: [0.5, 1],
+                duration: 300,
+                easing: 'easeInOutQuad',
+                direction: 'alternate',
+                loop: true,
+                delay: anime.stagger(100)
+            });
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typing = document.getElementById('typing');
+            if (typing) typing.remove();
+        }
+
+        function resetChat() {
+            questionCount = 0;
+            const chatBody = document.getElementById('chat-body');
+            const remainingQuestions = Object.keys(faqQuestions).filter(id => !answeredQuestions.includes(id));
+            
+            if (remainingQuestions.length === 0) {
+                chatBody.innerHTML = `
+                    <div class="chat-bubble bot">¡No tienes excusa! 😎 Es hora de vender más con Vende+. 💼 ¡Adquírelo ahora! 🎉</div>
+                    <div class="chat-options">
+                        <div class="chat-option acquire-plan" data-item="Vende+ Plan" data-price="300">Adquirir ahora 🚀</div>
+                    </div>
+                `;
+                document.getElementById('chat-status').textContent = 'En línea';
+                addChatOptionListeners();
+                animateBubbles();
+                return;
+            }
+
+            let optionsHTML = '<div class="chat-options" id="chat-options">';
+            remainingQuestions.forEach(id => {
+                optionsHTML += `<div class="chat-option" data-question="${id}">${faqQuestions[id]}</div>`;
+            });
+            optionsHTML += '</div>';
+
+            chatBody.innerHTML = `
+                <div class="chat-bubble bot">¡Hola! 😎 Soy tu asistente de Vende+. ¿Cómo te ayudo hoy?</div>
+                ${optionsHTML}
+            `;
+            document.getElementById('chat-status').textContent = 'En línea';
+            addChatOptionListeners();
+            animateBubbles();
+        }
+
+        function animateBubbles() {
+            anime({
+                targets: '.chat-bubble',
+                opacity: [0, 1],
+                translateY: [10, 0],
+                duration: 300,
+                easing: 'easeOutQuad',
+                delay: anime.stagger(100)
+            });
+        }
+
+        function addChatOptionListeners() {
+            document.querySelectorAll('.chat-option').forEach(option => {
+                if (option.classList.contains('acquire-plan')) {
+                    option.addEventListener('click', () => handleAcquirePlan(option));
+                } else if (option.hasAttribute('data-question')) {
+                    option.addEventListener('click', () => {
+                        const questionId = option.getAttribute('data-question');
+                        const questionText = option.textContent;
+                        const answerText = faqAnswers[questionId];
+
+                        if (!answeredQuestions.includes(questionId)) {
+                            answeredQuestions.push(questionId);
+                        }
+
+                        const chatBody = document.getElementById('chat-body');
+                        chatBody.querySelector('.chat-options').remove();
+
+                        chatBody.innerHTML += `<div class="chat-bubble user">${questionText}</div>`;
+                        document.getElementById('chat-status').textContent = 'Escribiendo...';
+                        showTypingIndicator();
+
+                        setTimeout(() => {
+                            removeTypingIndicator();
+                            chatBody.innerHTML += `<div class="chat-bubble bot">${answerText}</div>`;
+                            questionCount++;
+
+                            const remainingQuestions = Object.keys(faqQuestions).filter(id => !answeredQuestions.includes(id));
+
+                            let optionsHTML = '';
+                            if (remainingQuestions.length > 0) {
+                                optionsHTML = `
+                                    <div class="chat-options">
+                                        <div class="chat-option acquire-plan" data-item="Vende+ Plan" data-price="300">Comprar ahora 🎉</div>
+                                        <div class="chat-option" onclick="resetChat()">Reiniciar chat ❓</div>
+                                    </div>
+                                `;
+                                if (questionCount >= 2) {
+                                    chatBody.innerHTML += `
+                                        <div class="chat-bubble bot">¡Vende+ es ideal para ti! 💼 Compra ahora con 50% off 😊</div>
+                                    `;
+                                }
+                            } else {
+                                optionsHTML = `
+                                    <div class="chat-bubble bot">¡No tienes excusa! 😎 Es hora de vender más con Vende+. 💼 ¡Adquírelo ahora! 🎉</div>
+                                    <div class="chat-options">
+                                        <div class="chat-option acquire-plan" data-item="Vende+ Plan" data-price="300">Adquirir ahora 🚀</div>
+                                    </div>
+                                `;
+                            }
+
+                            chatBody.innerHTML += optionsHTML;
+                            document.getElementById('chat-status').textContent = 'En línea';
+                            animateBubbles();
+                            addChatOptionListeners();
+                            chatBody.scrollTop = chatBody.scrollHeight;
+
+                            if (!/Mobi|Android/i.test(navigator.userAgent)) {
+                                const sound = document.getElementById('message-sound');
+                                sound.play().catch(() => {});
+                            }
+                        }, 300);
+                    });
+                }
+            });
+        }
+
+        // Animación de Burbuja Flotante
+        anime({
+            targets: '#chat-bubble-float',
+            scale: [1, 1.05],
+            opacity: [0.8, 1],
+            duration: 1000,
+            easing: 'easeInOutQuad',
+            direction: 'alternate',
+            loop: true
+        });
+
+        addChatOptionListeners();
     </script>
 </body>
 </html>
