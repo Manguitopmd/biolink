@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Planes de redes sociales de Manguito Publicidad para impulsar tu marca.">
+    <meta name="keywords" content="redes sociales, publicidad, marketing, Manguito Publicidad">
     <title>Planes de Redes Sociales - Manguito Publicidad</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -62,11 +64,11 @@
             max-height: 0;
             overflow: hidden;
             padding: 0 1.5rem;
-            transition: all 0.4s ease;
+            transition: max-height 0.4s ease, padding 0.4s ease;
         }
 
         .accordion-content.active {
-            max-height: 800px;
+            max-height: 600px;
             padding: 1.5rem;
         }
 
@@ -78,13 +80,10 @@
             transform: rotate(180deg);
         }
 
-        .price-select {
-            background: rgba(17, 24, 39, 0.9);
-            border: 1px solid var(--primary);
-            color: white;
-            padding: 0.5rem;
-            border-radius: 8px;
-            width: 100%;
+        .price {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
             margin-bottom: 1rem;
         }
 
@@ -131,6 +130,15 @@
             animation: slideIn 0.3s ease;
         }
 
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
         @keyframes slideIn {
             from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
@@ -146,18 +154,31 @@
             color: white;
         }
 
+        .error {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
         .floating-emoji {
             position: absolute;
-            font-size: 1.5rem;
-            animation: float 8s ease infinite;
-            opacity: 0.7;
+            font-size: 1.25rem;
+            animation: float 10s ease infinite;
+            opacity: 0.6;
             pointer-events: none;
+        }
+
+        @media (max-width: 640px) {
+            .floating-emoji {
+                font-size: 1rem;
+            }
         }
 
         @keyframes float {
             0% { transform: translateY(100vh); opacity: 0; }
-            20% { opacity: 0.7; }
-            80% { opacity: 0.7; }
+            20% { opacity: 0.6; }
+            80% { opacity: 0.6; }
             100% { transform: translateY(-20vh); opacity: 0; }
         }
     </style>
@@ -173,96 +194,57 @@
 
         <!-- Accordions de Planes -->
         <div class="accordion-container">
-            <!-- Plan Base -->
+            <!-- Plan 99 -->
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h3 class="text-xl font-semibold text-[var(--primary)]">Paquete Base</h3>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
+                    <h3 class="text-xl font-semibold text-[var(--primary)]">Plan 99</h3>
+                    <i class="fas fa-chevron-down toggle-icon active"></i>
                 </div>
-                <div class="accordion-content">
-                    <select class="price-select">
-                        <option value="250">1 Mes - S/ 250</option>
-                        <option value="600">3 Meses - S/ 600 (20% descuento)</option>
-                    </select>
+                <div class="accordion-content active">
+                    <div class="price">S/ 99 - 1 Mes</div>
                     <ul class="feature-list">
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Gestión de 1 plataforma (FB o IG)</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 1 Diseño de Portada + 1 Diseño de Perfil</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 8 Publicaciones (Flyer + Copy)</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 2 Stories estratégicas</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 5 Publicaciones</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Foto de Portada + Perfil</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Calendario de Contenidos</li>
                     </ul>
-                    <button class="btn-primary w-full mt-4 select-plan" data-plan="Paquete Base">Seleccionar Plan</button>
+                    <button class="btn-primary w-full mt-4 select-plan" data-plan="Plan 99" data-price="S/ 99" aria-label="Seleccionar Plan 99">Seleccionar Plan</button>
                 </div>
             </div>
 
-            <!-- Plan Avanzado -->
+            <!-- Plan 199 -->
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h3 class="text-xl font-semibold text-[var(--primary)]">Paquete Avanzado</h3>
+                    <h3 class="text-xl font-semibold text-[var(--primary)]">Plan 199</h3>
                     <i class="fas fa-chevron-down toggle-icon"></i>
                 </div>
                 <div class="accordion-content">
-                    <select class="price-select">
-                        <option value="350">1 Mes - S/ 350</option>
-                        <option value="840">3 Meses - S/ 840 (20% descuento)</option>
-                    </select>
+                    <div class="price">S/ 199 - 1 Mes</div>
                     <ul class="feature-list">
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Gestión de 2 plataformas (FB e IG)</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 1 Diseño de Portada + 1 Diseño de Perfil</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 12 Publicaciones (Flyer + Copy)</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 4 Stories estratégicas</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 10 Publicaciones</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 4 Stories Estratégicas</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Foto de Portada + Perfil</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Calendario de Contenidos</li>
-                        <li><i class="fas fa-gift text-[var(--primary)] mr-2 mt-1"></i> BONO 3 meses: Sesión de fotos gratis</li>
                     </ul>
-                    <button class="btn-primary w-full mt-4 select-plan" data-plan="Paquete Avanzado">Seleccionar Plan</button>
+                    <button class="btn-primary w-full mt-4 select-plan" data-plan="Plan 199" data-price="S/ 199" aria-label="Seleccionar Plan 199">Seleccionar Plan</button>
                 </div>
             </div>
 
-            <!-- Plan TikTok -->
+            <!-- Plan 450 -->
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h3 class="text-xl font-semibold text-[var(--primary)]">Paquete TikTok</h3>
+                    <h3 class="text-xl font-semibold text-[var(--primary)]">Plan 450</h3>
                     <i class="fas fa-chevron-down toggle-icon"></i>
                 </div>
                 <div class="accordion-content">
-                    <select class="price-select">
-                        <option value="500">1 Mes - S/ 500</option>
-                        <option value="1200">3 Meses - S/ 1200 (20% descuento)</option>
-                    </select>
+                    <div class="price">S/ 450 - 1 Mes</div>
                     <ul class="feature-list">
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Gestión de TikTok</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 1 Diseño de Portada + 1 Diseño de Perfil</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 10 Videos + Copy optimizado</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 4 Stories estratégicas</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 16 Posts (Flyer/Video)</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 4 Stories Estratégicas</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 1 Reel</li>
+                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Foto de Portada + Perfil</li>
                         <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Calendario de Contenidos</li>
                     </ul>
-                    <button class="btn-primary w-full mt-4 select-plan" data-plan="Paquete TikTok">Seleccionar Plan</button>
-                </div>
-            </div>
-
-            <!-- Plan Élite -->
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <h3 class="text-xl font-semibold text-[var(--primary)]">Paquete Élite</h3>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
-                </div>
-                <div class="accordion-content">
-                    <select class="price-select">
-                        <option value="800">1 Mes - S/ 800</option>
-                        <option value="1920">3 Meses - S/ 1920 (20% descuento)</option>
-                    </select>
-                    <ul class="feature-list">
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 2 plataformas (FB/IG o IG/TikTok)</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 1 Diseño de Portada + 1 Diseño de Perfil</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 10 Publicaciones + Copy</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 4 Reels/Microvideos editados</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> 6 Stories estratégicas</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Calendario de Contenidos</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Optimización de perfil</li>
-                        <li><i class="fas fa-check text-[var(--primary)] mr-2 mt-1"></i> Monitoreo mensual</li>
-                        <li><i class="fas fa-gift text-[var(--primary)] mr-2 mt-1"></i> BONO 3 meses: Sesión de fotos gratis</li>
-                    </ul>
-                    <button class="btn-primary w-full mt-4 select-plan" data-plan="Paquete Élite">Seleccionar Plan</button>
+                    <button class="btn-primary w-full mt-4 select-plan" data-plan="Plan 450" data-price="S/ 450" aria-label="Seleccionar Plan 450">Seleccionar Plan</button>
                 </div>
             </div>
         </div>
@@ -270,12 +252,13 @@
         <!-- Modal -->
         <div class="modal" id="payment-modal">
             <div class="modal-content">
+                <i class="fas fa-times close-modal" aria-label="Cerrar modal"></i>
                 <h2 class="text-2xl font-bold text-[var(--primary)] mb-4">Contratar Plan</h2>
                 <p class="mb-4">Ingresa tus datos para comenzar</p>
-                <input type="text" id="clientName" placeholder="Nombre completo" class="form-input">
-                <input type="text" id="businessName" placeholder="Nombre del negocio" class="form-input">
-                <input type="tel" id="phoneNumber" placeholder="Número de WhatsApp" class="form-input">
-                <button id="send-whatsapp" class="btn-primary w-full">Enviar por WhatsApp</button>
+                <p id="error-message" class="error">Por favor, completa todos los campos.</p>
+                <input type="text" id="clientName" placeholder="Nombre completo" class="form-input" aria-label="Nombre completo">
+                <input type="text" id="businessName" placeholder="Nombre del negocio" class="form-input" aria-label="Nombre del negocio">
+                <button id="send-whatsapp" class="btn-primary w-full" aria-label="Enviar por WhatsApp">Enviar por WhatsApp</button>
             </div>
         </div>
 
@@ -288,7 +271,6 @@
     <script>
         // Variables globales
         let selectedPlan = null;
-        let selectedDuration = null;
         let selectedPrice = null;
 
         // Funcionalidad del acordeón
@@ -315,62 +297,49 @@
         // Seleccionar plan
         document.querySelectorAll('.select-plan').forEach(button => {
             button.addEventListener('click', () => {
-                const accordion = button.closest('.accordion-item');
                 selectedPlan = button.getAttribute('data-plan');
-                const select = accordion.querySelector('.price-select');
-                selectedDuration = select.options[select.selectedIndex].text.split('-')[0].trim();
-                selectedPrice = select.options[select.selectedIndex].text.split('-')[1].trim();
-
+                selectedPrice = button.getAttribute('data-price');
+                console.log('Plan seleccionado:', selectedPlan, 'Precio:', selectedPrice); // Depuración
                 document.getElementById('payment-modal').style.display = 'flex';
+                document.getElementById('error-message').style.display = 'none';
+                document.getElementById('clientName').value = '';
+                document.getElementById('businessName').value = '';
             });
         });
 
         // Enviar por WhatsApp
         document.getElementById('send-whatsapp').addEventListener('click', () => {
-            const clientName = document.getElementById('clientName').value;
-            const businessName = document.getElementById('businessName').value;
-            const phoneNumber = document.getElementById('phoneNumber').value;
+            const clientName = document.getElementById('clientName').value.trim();
+            const businessName = document.getElementById('businessName').value.trim();
 
-            if (!clientName || !businessName || !phoneNumber) {
-                alert('Por favor, completa todos los campos.');
+            console.log('Datos del formulario:', { clientName, businessName }); // Depuración
+
+            if (!clientName || !businessName || !selectedPlan || !selectedPrice) {
+                document.getElementById('error-message').style.display = 'block';
                 return;
             }
 
             const message = `¡Hola Manguito Publicidad! 👋\n\n` +
-                           `*Cliente:*\n` +
+                           `*Solicitud de Plan*\n` +
+                           `📋 *Plan*: ${selectedPlan}\n` +
+                           `💰 *Precio*: ${selectedPrice} (1 Mes)\n\n` +
+                           `*Datos del Cliente*\n` +
                            `- Nombre: ${clientName}\n` +
-                           `- Negocio: ${businessName}\n` +
-                           `- Teléfono: ${phoneNumber}\n\n` +
-                           `*Plan:*\n` +
-                           `- ${selectedPlan}\n` +
-                           `- Duración: ${selectedDuration}\n` +
-                           `- Precio: ${selectedPrice}\n\n` +
-                           `Quiero contratar este servicio. ¡Gracias!`;
+                           `- Negocio: ${businessName}\n\n` +
+                           `Estoy interesado en contratar este plan. ¡Por favor contáctenme!`;
 
+            console.log('Mensaje generado:', message); // Depuración
             window.open(`https://wa.link/phat12?text=${encodeURIComponent(message)}`, '_blank');
             document.getElementById('payment-modal').style.display = 'none';
         });
 
-        // Cerrar modal al hacer clic fuera
+        // Cerrar modal
         document.getElementById('payment-modal').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) {
+            if (e.target === e.currentTarget || e.target.classList.contains('close-modal')) {
                 e.currentTarget.style.display = 'none';
+                document.getElementById('error-message').style.display = 'none';
             }
         });
-
-        // Emojis flotantes
-        const emojis = ["📱", "📸", "🎥", "✨", "🔥", "👍", "🎉"];
-        function createEmoji() {
-            const emoji = document.createElement('div');
-            emoji.className = 'floating-emoji';
-            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-            emoji.style.left = `${Math.random() * 100}vw`;
-            emoji.style.animationDuration = `${6 + Math.random() * 4}s`;
-            document.body.appendChild(emoji);
-            setTimeout(() => emoji.remove(), 10000);
-        }
-        setInterval(createEmoji, 1500);
-        createEmoji();
     </script>
 </body>
 </html>
