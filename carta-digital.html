@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vende+ por Manguito Publicidad - Link, QR y app para vender por WhatsApp. ¡50% de descuento hasta fin de mes!">
-    <meta name="keywords" content="Vende+, carta digital, pedidos WhatsApp, QR negocio, app Android, Perú">
-    <title>Vende+ - Manguito Publicidad 📲</title>
+    <meta name="description" content="Carta Digital para Restaurante - Manguito Publicidad. Link, QR y app para tu restaurante. ¡Plan Express a S/200 por promoción!">
+    <meta name="keywords" content="carta digital, menú digital, restaurante, pedidos WhatsApp, QR restaurante, Perú">
+    <title>Carta Digital - Manguito Publicidad 📲</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,8 +19,6 @@
             --text-light: #ffffff;
             --whatsapp: #25D366;
             --restaurante: #ef4444;
-            --tienda: #3b82f6;
-            --peluqueria: #8b5cf6;
         }
 
         body {
@@ -57,28 +55,6 @@
 
         .header img:hover {
             transform: scale(1.1);
-        }
-
-        .video-section {
-            margin-bottom: 1.25rem;
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 8px;
         }
 
         .accordion-item {
@@ -169,8 +145,6 @@
         }
 
         .demo-restaurante { background: var(--restaurante); }
-        .demo-tienda { background: var(--tienda); }
-        .demo-peluqueria { background: var(--peluqueria); }
 
         .btn-back {
             background: #6b7280;
@@ -260,12 +234,17 @@
             border: 1px solid var(--primary);
             margin: 1rem auto;
             display: block;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+            text-align: center;
         }
 
         .qr-image:hover {
             transform: scale(1.02);
+        }
+
+        .qr-fallback {
+            text-align: center;
+            font-size: 0.875rem;
+            color: rgba(156, 163, 175, 0.8);
         }
 
         .promo-text {
@@ -472,51 +451,64 @@
         <!-- Header -->
         <div class="header animate-fade-in">
             <img src="logo.jpg" alt="Logo de Manguito Publicidad" class="w-16 h-16 rounded-full mx-auto mb-2 border-2 border-[var(--primary)]/50" loading="lazy">
-            <h1 class="text-xl font-bold text-[var(--primary)]">📲 Vende+ para Crecer</h1>
-            <p class="text-sm mt-1 opacity-90">Tu amigo para vender 😊</p>
-            <p class="text-sm mb-2">Digitaliza tu negocio con link, QR y app 📱. ¡Plan de S/700, ahora S/350 por lanzamiento de Vive Talara! 💸</p>
-            <p class="promo-text text-sm">Aprovecha el 50% de descuento, solo hasta el 30 de abril 2025 🎉</p>
+            <h1 class="text-xl font-bold text-[var(--primary)]">📲 Carta Digital para Restaurante</h1>
+            <p class="text-sm mt-1 opacity-90">Tu menú digital fácil y rápido 😊</p>
+            <p class="text-sm mb-2">Digitaliza tu restaurante con link, QR y app 📱. ¡Plan Express a S/200 por promoción! 💸</p>
+            <p class="promo-text text-sm">Aprovecha el descuento, solo hasta el 30 de abril 2025 🎉</p>
         </div>
 
-        <!-- Video -->
-        <section class="video-section animate-fade-in">
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/7xSyl9jRpzc?enablejsapi=1&controls=0&rel=0&showinfo=0" frameborder="0" allowfullscreen loading="lazy"></iframe>
-            </div>
-        </section>
-
-        <!-- Vende+ Plan -->
+        <!-- Carta Digital Express Plan -->
         <div class="accordion-item animate-fade-in">
             <div class="accordion-header">
                 <div class="price-container">
-                    <h3 class="text-base font-semibold text-[var(--primary)]">Vende+ 💼</h3>
-                    <p class="text-xs opacity-80 mb-1">Ideal para cualquier negocio 😎</p>
+                    <h3 class="text-base font-semibold text-[var(--primary)]">Carta Digital Express 📱</h3>
+                    <p class="text-xs opacity-80 mb-1">Ideal para empezar rápido 😎</p>
+                    <p class="price-highlight">S/ 200 <span class="text-xs">(pago único)</span></p>
+                    <p><span class="original-price">S/ 400</span></p>
+                </div>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="accordion-content">
+                <p class="text-sm mb-2">Tu carta digital completa, rápida y sin complicaciones. Ideal para digitalizar tu restaurante en solo 48 horas.</p>
+                <h4 class="text-sm font-semibold mb-1 text-[var(--primary)]">Incluye</h4>
+                <ul class="benefits-list mb-2">
+                    <li>📸 Fotos, precios y descripciones claras</li>
+                    <li>📅 Reservas en línea integradas</li>
+                    <li>🌟 Bienvenida personalizada (slider, botones, mapa)</li>
+                    <li>🔗 Link y código QR personalizados</li>
+                    <li>🚀 Entrega en 48 horas</li>
+                </ul>
+                <div class="button-group">
+                    <a href="https://goo.su/cZ3GxkE" target="_blank" class="btn-demo demo-restaurante">👀 Ver Demo Express</a>
+                    <button class="btn-primary acquire-plan" data-item="Carta Digital Express" data-price="200">Adquirir Carta Express 🎉</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carta Digital Pro Plan -->
+        <div class="accordion-item animate-fade-in">
+            <div class="accordion-header">
+                <div class="price-container">
+                    <h3 class="text-base font-semibold text-[var(--primary)]">Carta Digital Pro 🍽️</h3>
+                    <p class="text-xs opacity-80 mb-1">Perfecto para delivery y más 😎</p>
                     <p class="price-highlight">S/ 350 <span class="text-xs">(pago único)</span></p>
                     <p><span class="original-price">S/ 700</span></p>
                 </div>
                 <i class="fas fa-chevron-down toggle-icon"></i>
             </div>
             <div class="accordion-content">
-                <p class="text-sm mb-2">Vende+ es adaptable a cualquier negocio: para restaurantes es Vende+ Velivery 🍽️; para spa, barberías y similares es Vende+ Catálogo Digital para vender tus servicios 💇‍♂️; para tiendas de tallas, obsequios o stock limitado es Vende+ Store 🛍️.</p>
-                <p class="text-sm mb-2">¡Vende más por WhatsApp! 📲</p>
+                <p class="text-sm mb-2">Todo lo del Plan Express, más funciones avanzadas para llevar tu restaurante al siguiente nivel.</p>
                 <h4 class="text-sm font-semibold mb-1 text-[var(--primary)]">Incluye</h4>
                 <ul class="benefits-list mb-2">
-                    <li>📸 Carta digital</li>
-                    <li>🛒 Carrito pedidos</li>
-                    <li>📅 Reservas</li>
-                    <li>🔗 Link, QR, app</li>
+                    <li>📸 Todo lo del Plan Express</li>
+                    <li>🛒 Carrito de compras interactivo</li>
+                    <li>📲 Pedidos directos por WhatsApp</li>
+                    <li>💳 Pagos integrados (Yape, Plin, efectivo)</li>
+                    <li>🚀 Ideal para delivery</li>
                 </ul>
-                <h4 class="text-sm font-semibold mb-1 text-[var(--primary)]">Beneficios</h4>
-                <ul class="benefits-list mb-2">
-                    <li>📲 Vende por WhatsApp</li>
-                    <li>👥 Fácil para clientes</li>
-                    <li>💸 Pago único</li>
-                    <li>🚀 Crece rápido</li>
-                </ul>
-                <p class="text-xs mb-2">Actualización: S/50 por cambio 🔄</p>
                 <div class="button-group">
-                    <a href="https://manguitopmd.github.io/demo_burger/" target="_blank" class="btn-demo demo-tienda">👀 Ver Demo</a>
-                    <button class="btn-primary acquire-plan" data-item="Vende+ Plan" data-price="350">Adquirir mi Vende+ 🎉</button>
+                    <a href="https://goo.su/4AQmQ" target="_blank" class="btn-demo demo-restaurante">👀 Ver Demo Pro</a>
+                    <button class="btn-primary acquire-plan" data-item="Carta Digital Pro" data-price="350">Adquirir Carta Pro 🎉</button>
                 </div>
             </div>
         </div>
@@ -528,7 +520,7 @@
                 <!-- Paso 1: Revisar Carrito -->
                 <div class="step active" id="cart-step-1">
                     <h2 class="text-lg font-bold text-[var(--primary)] mb-2">🛒 Tu Carrito</h2>
-                    <p class="text-sm mb-2">¡50% de descuento por lanzamiento de Vive Talara! 💥 Revisa y paga 🎉</p>
+                    <p class="text-sm mb-2">¡Aprovecha el descuento por promoción! 💥 Revisa y paga 🎉</p>
                     <div id="cart-content" class="text-sm"></div>
                     <p class="promo-text mb-2 text-sm">Total: <span id="cart-total">S/ 0</span> 💸</p>
                     <div class="step-navigation">
@@ -538,10 +530,13 @@
                 <!-- Paso 2: QR de Pago -->
                 <div class="step" id="cart-step-2">
                     <h2 class="text-lg font-bold text-[var(--primary)] mb-2">💸 Paga Ahora</h2>
-                    <p class="text-sm mb-2">¡Ahorra 50%! 💸 Clic en el QR, paga y envía el comprobante 📲</p>
-                    <a href="qr-pago.jpg" download="QR_Pago_Vende+.jpg">
-                        <img src="qr-pago.jpg" alt="QR de Pago" class="qr-image" loading="lazy">
-                    </a>
+                    <p class="text-sm mb-2">¡Ahorra con la promoción! 💸 Clic en el QR, paga y envía el comprobante 📲</p>
+                    <div style="text-align: center;">
+                        <a href="qr-pago.jpg" download="QR_Pago_Carta_Digital.jpg">
+                            <img src="qr-pago.jpg" alt="QR de Pago" class="qr-image" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <p class="qr-fallback" style="display: none;">No se pudo cargar el QR. Contáctanos en WhatsApp.</p>
+                        </a>
+                    </div>
                     <div class="step-navigation">
                         <button class="btn-back" id="back-to-cart-step-1">⬅️ Atrás</button>
                         <button class="btn-primary" id="checkout-whatsapp">Finalizar en WhatsApp 📲</button>
@@ -562,9 +557,9 @@
                     </div>
                 </div>
                 <div class="chat-body" id="chat-body">
-                    <div class="chat-bubble bot">¡Hola! 😎 Soy Manguito tu asistente de Vende+. ¿Cómo te ayudo hoy?</div>
+                    <div class="chat-bubble bot">¡Hola! 😎 Soy Manguito, tu asistente de Carta Digital. ¿Cómo te ayudo hoy?</div>
                     <div class="chat-options" id="chat-options">
-                        <div class="chat-option" data-question="1">¿Qué es Vende+? 🌟</div>
+                        <div class="chat-option" data-question="1">¿Qué es Carta Digital? 🌟</div>
                         <div class="chat-option" data-question="2">¿Cuáles son los beneficios? 😎</div>
                         <div class="chat-option" data-question="3">¿Cómo empiezo? 🚀</div>
                         <div class="chat-option" data-question="4">¿Puedo personalizar? 🎨</div>
@@ -596,24 +591,24 @@
         let questionCount = 0;
         let answeredQuestions = [];
         const faqQuestions = {
-    1: "¿Qué es Vende+? 🌟",
-    2: "¿Cuáles son los beneficios? 😎",
-    3: "¿Cómo empiezo? 🚀",
-    4: "¿Puedo personalizar? 🎨",
-    5: "¿Cómo realizo el pago? 💸",
-    6: "¿Actualizar catálogo? 🔄",
-    7: "¿Problemas técnicos? 🛠️"
-};
+            1: "¿Qué es Carta Digital? 🌟",
+            2: "¿Cuáles son los beneficios? 😎",
+            3: "¿Cómo empiezo? 🚀",
+            4: "¿Puedo personalizar? 🎨",
+            5: "¿Qué métodos de pago? 💸",
+            6: "¿Actualizar catálogo? 🔄",
+            7: "¿Problemas técnicos? 🛠️"
+        };
 
-const faqAnswers = {
-    1: "Vende+ potencia tu WhatsApp 📱 con carta digital, pedidos, reservas, link, QR y app Android, ¡listo en 48h! 🚀 ¿Digitalizamos tu negocio? ¡Adquiérelo ya! 🎉",
-    2: "Vende+ simplifica ventas por WhatsApp 📲: carta digital, pedidos, diseño personalizado, ¡por S/350 (50% de descuento por lanzamiento de Vive Talara)! 🤑 ¿Listo para crecer? ¡Adquiérelo ya! 🚀",
-    3: "Realiza el pago y envía tu comprobante, te contactamos y nos envías todo de tu negocio, horarios, productos o servicios por WhatsApp 📲. y en 48hrs tienes link, QR y app Android. 😊 ¡Empecemos! ¡Adquiérelo ya! 🎉",
-    4: "¡Sí! Personalizamos colores, logo y diseño a tu marca 🌟. ¿Quieres un Vende+ único? ¡Adquiérelo ya! 🎨",
-    5: "Puedes realizar el pago de S/350.00 de Vende+ por yape o plin, solo descarga o escanea el qr de pago (aprovecha el 50% de descuento por lanzamiento de Vive Talara) y envías el boucher a nuestro WhatsApp 📲. ¡Listo en 48h! 🤑",
-    6: "Tu primera actualización es gratis, luego el costo es de S/50 📋. Envíanos los cambios por WhatsApp, 😊 ¡Actualizamos y listo! ¡Adquiérelo ya! 🚀",
-    7: "Resolvemos problemas con link, QR o app rápido 😎. ¿Listo para Vende+? ¡Adquiérelo ya! 🚀"
-};
+        const faqAnswers = {
+            1: "Carta Digital transforma tu menú en un link, QR y app 📱 con fotos, precios, reservas y más, ¡listo en 48h! 🚀 ¿Digitalizamos tu restaurante? ¡Adquírelo ya! 🎉",
+            2: "Carta Digital simplifica tu restaurante: menú digital, reservas, pedidos por WhatsApp, pagos integrados. Express a S/200 y Pro a S/350 (promoción). 😊 ¡Adquírelo ya! 🚀",
+            3: "Paga tu plan (Express S/200 o Pro S/350), envía el comprobante, comparte los detalles de tu restaurante por WhatsApp 📲, ¡y en 48h tienes tu carta digital! 😊 ¡Adquírelo ya! 🎉",
+            4: "¡Sí! Personalizamos colores, logo y diseño a tu marca 🌟. ¿Quieres una Carta Digital única? ¡Adquírelo ya! 🎨",
+            5: "Paga tu plan (Express S/200 o Pro S/350) por Yape o Plin, escanea el QR, envía el comprobante a nuestro WhatsApp 📲. ¡Listo en 48h! 🤑",
+            6: "Tu primera actualización es gratis, luego cuesta S/50 📋. Envía los cambios por WhatsApp, ¡y actualizamos tu carta! 😊 ¡Adquírelo ya! 🚀",
+            7: "Resolvemos problemas con link, QR o app rápido 😎. ¿Listo para Carta Digital? ¡Adquírelo ya! 🚀"
+        };
 
         // Acordeón
         document.querySelectorAll('.accordion-header').forEach(header => {
@@ -634,7 +629,7 @@ const faqAnswers = {
                 cartContent.innerHTML = '<p class="cart-empty">¡Carrito vacío! 😢</p>';
                 cartTotal.textContent = 'S/ 0';
             } else {
-                let社區total = 0;
+                let total = 0;
                 let html = `
                     <table class="cart-table">
                         <thead>
@@ -656,13 +651,13 @@ const faqAnswers = {
                 });
                 html += '</tbody></table>';
                 cartContent.innerHTML = html;
-                cartTotal.textContent = `S/ ${total}`;
+                cartTotal.textContent = `S/ ${total.toFixed(2)}`;
             }
         }
 
         function handleAcquirePlan(button) {
             const itemName = button.getAttribute('data-item');
-            const itemPrice = parseInt(button.getAttribute('data-price'));
+            const itemPrice = parseFloat(button.getAttribute('data-price'));
 
             if (!cart.some(item => item.name === itemName)) {
                 cart.push({ name: itemName, price: itemPrice });
@@ -722,9 +717,9 @@ const faqAnswers = {
 
             let total = cart.reduce((sum, item) => sum + item.price, 0);
             let message = `¡Hola Manguito Publicidad! 👋\n\n` +
-                         `*Solicitud Vende+:*\n` +
+                         `*Solicitud Carta Digital:*\n` +
                          cart.map(item => `- ${item.name}: S/ ${item.price}`).join('\n') + `\n` +
-                         `*Total: S/ ${total}*\n` +
+                         `*Total: S/ ${total.toFixed(2)}*\n` +
                          `Ya pagué. Adjunto comprobante. ¡Gracias! 😊`;
 
             window.open(`https://wa.me/51961360935?text=${encodeURIComponent(message)}`, '_blank');
@@ -791,9 +786,10 @@ const faqAnswers = {
             
             if (remainingQuestions.length === 0) {
                 chatBody.innerHTML = `
-                    <div class="chat-bubble bot">¡No tienes excusa! 😎 Es hora de vender más con Vende+. 💼 ¡Adquírelo ahora! 🎉</div>
+                    <div class="chat-bubble bot">¡No tienes excusa! 😎 Es hora de digitalizar tu restaurante con Carta Digital. 💼 ¡Adquírelo ahora! 🎉</div>
                     <div class="chat-options">
-                        <div class="chat-option acquire-plan" data-item="Vende+ Plan" data-price="350">Adquirir ahora 🚀</div>
+                        <div class="chat-option acquire-plan" data-item="Carta Digital Express" data-price="200">Adquirir Express 🚀</div>
+                        <div class="chat-option acquire-plan" data-item="Carta Digital Pro" data-price="350">Adquirir Pro 🚀</div>
                     </div>
                 `;
                 document.getElementById('chat-status').textContent = 'En línea';
@@ -809,7 +805,7 @@ const faqAnswers = {
             optionsHTML += '</div>';
 
             chatBody.innerHTML = `
-                <div class="chat-bubble bot">¡Hola! 😎 Soy tu asistente de Vende+. ¿Cómo te ayudo hoy?</div>
+                <div class="chat-bubble bot">¡Hola! 😎 Soy tu asistente de Carta Digital. ¿Cómo te ayudo hoy?</div>
                 ${optionsHTML}
             `;
             document.getElementById('chat-status').textContent = 'En línea';
@@ -860,20 +856,22 @@ const faqAnswers = {
                             if (remainingQuestions.length > 0) {
                                 optionsHTML = `
                                     <div class="chat-options">
-                                        <div class="chat-option acquire-plan" data-item="Vende+ Plan" data-price="350">Comprar ahora 🎉</div>
+                                        <div class="chat-option acquire-plan" data-item="Carta Digital Express" data-price="200">Adquirir Express 🎉</div>
+                                        <div class="chat-option acquire-plan" data-item="Carta Digital Pro" data-price="350">Adquirir Pro 🎉</div>
                                         <div class="chat-option" onclick="resetChat()">Otra pregunta ❓</div>
                                     </div>
                                 `;
                                 if (questionCount >= 2) {
                                     chatBody.innerHTML += `
-                                        <div class="chat-bubble bot">¡Vende+ es ideal para ti! 💼 Compra ahora con 50% de descuento por lanzamiento de Vive Talara 😊</div>
+                                        <div class="chat-bubble bot">¡Carta Digital es ideal para tu restaurante! 💼 Compra ahora con descuento por promoción 😊</div>
                                     `;
                                 }
                             } else {
                                 optionsHTML = `
-                                    <div class="chat-bubble bot">¡No tienes excusa! 😎 Es hora de vender más con Vende+. 💼 ¡Adquírelo ahora! 🎉</div>
+                                    <div class="chat-bubble bot">¡No tienes excusa! 😎 Es hora de digitalizar tu restaurante con Carta Digital. 💼 ¡Adquírelo ahora! 🎉</div>
                                     <div class="chat-options">
-                                        <div class="chat-option acquire-plan" data-item="Vende+ Plan" data-price="350">Adquirir ahora 🚀</div>
+                                        <div class="chat-option acquire-plan" data-item="Carta Digital Express" data-price="200">Adquirir Express 🚀</div>
+                                        <div class="chat-option acquire-plan" data-item="Carta Digital Pro" data-price="350">Adquirir Pro 🚀</div>
                                     </div>
                                 `;
                             }
